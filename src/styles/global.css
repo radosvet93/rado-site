@@ -1,4 +1,4 @@
-@import url('https://fonts.google.com/share?selection.family=Montserrat:ital,wght@0,100..900;1,100..900|Noto+Sans:ital,wght@0,100..900;1,100..900');
+@import url('https://fonts.google.com/share?selection.family=PT+Mono');
 
 @import 'tailwindcss';
 
@@ -63,5 +63,9 @@ These styles are for code highlighting that can't be easily implemented with jus
 }
 
 @theme {
-	--font-sans: 'Noto Sans', sans-serif;
+	--font-sans: 'PT Mono';
+}
+
+html {
+	font-size: 18px;
 }
