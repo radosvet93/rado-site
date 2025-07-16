@@ -5,13 +5,16 @@ import Hero from '@/components/Hero.astro';
 import LatestPosts from '@/components/LatestPosts.astro';
 import { sortPostsByDate } from '@/utils/data.util';
 import { MarkdownInstance } from 'astro';
-
+interface Frontmatter {
+	title: string;
+	description?: string;
+}
 const { title } = AppConfig;
 const { description } = AppConfig;
 
 const allPosts = Object.values(
-	import.meta.glob('./posts/*.md', { eager: true })
-) as MarkdownInstance<any>[];
+	import.meta.glob<MarkdownInstance<Frontmatter>>('./posts/**/*.md', { eager: true })
+);
 allPosts.sort(sortPostsByDate);
 const latestPosts = allPosts.slice(0, 3);
 ---

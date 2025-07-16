@@ -30,9 +30,20 @@ const {
 			rel="icon"
 			href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>"
 		/>
+		<script>
+			document
+				.querySelector('html')
+				?.classList.toggle(
+					'dark',
+					localStorage.theme === 'dark' ||
+						(!('theme' in localStorage) &&
+							window.matchMedia('(prefers-color-scheme: dark)').matches)
+				);
+		</script>
 	</head>
+
 	<body
-		class="flex min-h-screen flex-col bg-indigo-50 font-sans text-gray-950 dark:bg-stone-800 dark:text-white"
+		class="flex min-h-screen flex-col bg-stone-50 font-sans text-gray-950 dark:bg-stone-800 dark:text-white"
 	>
 		<Navbar />
 		<div class="flex-1">

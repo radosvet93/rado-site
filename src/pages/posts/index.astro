@@ -7,24 +7,30 @@ import Heading from '@/components/Heading.astro';
 import { sortPostsByDate } from '@/utils/data.util';
 import { MarkdownInstance } from 'astro';
 
+interface Frontmatter {
+	title: string;
+	description?: string;
+}
 const { title } = AppConfig;
 const { description } = AppConfig;
 
 const allPosts = Object.values(
-	import.meta.glob('./*.md', { eager: true })
-) as MarkdownInstance<any>[];
+	import.meta.glob<MarkdownInstance<Frontmatter>>('./**/*.md', { eager: true })
+);
 allPosts.sort(sortPostsByDate);
 ---
 
 <Base head={{ title, description }}>
 	<Section><Heading title="Posts" /></Section>
 	<Section>
-		{
-			allPosts.map((post: any) => (
-				<div class="mb-4 basis-1 last:mb-0">
-					<Card post={post} />
-				</div>
-			))
-		}
+		<div class="flex">
+			{
+				allPosts.map((post: any) => (
+					<div class="mb-4 basis-1/3 last:mb-0">
+						<Card post={post} />
+					</div>
+				))
+			}
+		</div>
 	</Section>
 </Base>
