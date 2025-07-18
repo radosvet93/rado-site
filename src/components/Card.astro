@@ -1,6 +1,7 @@
 ---
 import { formatDate } from '@/utils/data.util';
 import PinnedBadge from './PinnedBadge.astro';
+import type { ImageMetadata } from 'astro';
 import { Image } from 'astro:assets';
 
 interface Props {
@@ -20,17 +21,23 @@ interface Props {
 	};
 }
 
-const origin = Astro.url.origin;
 const { post } = Astro.props;
 const isPinned = post.frontmatter.isPinned === true;
-const image = post.frontmatter.image;
-const imagePath = `${origin}/src/pages/posts/${image.src}`;
+const img = post.frontmatter.image;
+
+const postImageGlob = import.meta.glob<{ default: ImageMetadata }>(
+	'/src/pages/posts/**/*.{jpeg,jpg,png,gif}'
+);
+const postImage = postImageGlob[img.src];
+
+if (!postImage)
+	throw new Error(`"${img.src}" does not exist in glob: "src/pages/posts/**/*.{jpeg,jpg,png,gif}"`);
 ---
 
 <a href={post.url}>
-	<div class="h-full rounded-2xl p-1 text-sm dark:bg-gray-900">
+	<div class="h-full rounded-2xl p-1 text-sm dark:bg-red-300">
 		<div
-			class="flex h-full flex-col rounded-2xl bg-gray-300 p-4 text-gray-900 opacity-90 dark:bg-gray-800 dark:text-white"
+			class="flex h-full flex-col rounded-2xl bg-gray-300 p-4 text-gray-900 opacity-90 dark:bg-gray-900 dark:text-white"
 		>
 			<div class="flex-auto">
 				<div class="flex flex-col justify-between gap-2 pb-4 text-xs">
@@ -43,7 +50,7 @@ const imagePath = `${origin}/src/pages/posts/${image.src}`;
 				</div>
 			</div>
 
-			{image.src ? <Image inferSize src={imagePath} alt={image.alt} /> : null}
+			{img.src ? <Image src={postImage()} alt={img.alt} width={300} height={150} /> : null}
 
 			<p class="pb-4 text-lg font-bold">{post.frontmatter.title}</p>
 			<p class="line-clamp-2">{post.frontmatter.excerpt}</p>

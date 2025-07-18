@@ -4,6 +4,19 @@ import Section from './Section.astro';
 import Tags from './Tags.astro';
 import PinnedBadge from './PinnedBadge.astro';
 import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+const { title, pubDate, tags, minutesRead, img, isPinned = false } = Astro.props;
+
+const postImageGlob = import.meta.glob<{ default: ImageMetadata }>(
+	'/src/pages/posts/**/*.{jpeg,jpg,png,gif}'
+);
+const postImage = postImageGlob[img.src];
+
+if (!postImage)
+	throw new Error(`"${img.src}" does not exist in glob: "src/pages/posts/**/*.{jpeg,jpg,png,gif}"`);
+
+const formattedDate = formatDate(pubDate);
 
 interface Props {
 	title: string;
@@ -17,13 +30,6 @@ interface Props {
 		alt: string;
 	};
 }
-
-const { title, pubDate, tags, minutesRead, img, isPinned = false } = Astro.props;
-
-const formattedDate = formatDate(pubDate);
-
-const origin = Astro.url.origin;
-const imagePath = `${origin}/src/pages/posts/${img.src}`;
 ---
 
 <Section>
@@ -35,10 +41,10 @@ const imagePath = `${origin}/src/pages/posts/${img.src}`;
 		<div class="pb-4">
 			<Tags tags={tags} withHref={true} />
 		</div>
-		<div class="text-sm pb-4">
+		<div class="pb-4 text-sm">
 			<span>{formattedDate}</span> - <span>{minutesRead}</span>
 		</div>
 
-		{img.src ? <Image inferSize src={imagePath} alt={img.alt} /> : null}
+		<Image src={postImage()} alt={img.alt} width={800} height={600} />
 	</div>
 </Section>

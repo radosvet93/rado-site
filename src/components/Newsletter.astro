@@ -1,0 +1,63 @@
+---
+
+---
+
+<section class="bg-gray-200 px-4 py-12">
+	<div class="mx-auto max-w-xl text-center">
+		<h2 class="mb-2 text-2xl font-bold dark:text-gray-600">Join my newsletter</h2>
+		<p class="mb-6 text-gray-600">
+			Subscribe to get updates on new blog posts, useful frontend tips and ideas you can apply in
+			your own work.
+		</p>
+
+		<form
+			id="newsletter-form"
+			action="https://app.convertkit.com/forms/8324343/subscriptions"
+			method="POST"
+			target="hidden-iframe"
+			class="mt-4 flex w-full flex-col items-start gap-4 sm:flex-row sm:items-center"
+		>
+			<input
+				id="email"
+				name="email_address"
+				type="email"
+				required
+				placeholder="Email address"
+				class="w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-base text-gray-900 focus:ring-2 focus:ring-pink-600 focus:outline-none"
+			/>
+
+			<button
+				type="submit"
+				class="rounded-md bg-pink-600 px-6 py-2 text-base font-medium text-white transition hover:bg-pink-700"
+			>
+				Subscribe
+			</button>
+
+			<div id="form-success" class="hidden font-medium text-green-600">
+				✅ You’ve been subscribed!
+			</div>
+		</form>
+
+		<iframe name="hidden-iframe" class="hidden"></iframe>
+	</div>
+</section>
+
+<script is:inline>
+	document.addEventListener('DOMContentLoaded', () => {
+		const form = document.getElementById('newsletter-form');
+		const success = document.getElementById('form-success');
+
+		if (!form || !success) return;
+
+		form.addEventListener('submit', () => {
+			setTimeout(() => {
+				form.reset();
+				success.classList.remove('hidden');
+
+				setTimeout(() => {
+					success.classList.add('hidden');
+				}, 5000);
+			}, 1200);
+		});
+	});
+</script>

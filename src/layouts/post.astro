@@ -3,6 +3,7 @@ import { AppConfig } from '@/utils/AppConfig';
 import Base from '@/layouts/Base.astro';
 import PostHeader from '@/components/PostHeader.astro';
 import PostContent from '@/components/PostContent.astro';
+import Newsletter from '@/components/Newsletter.astro';
 
 const { description } = AppConfig;
 
@@ -20,6 +21,10 @@ const { frontmatter } = Astro.props;
 			isPinned={frontmatter.isPinned}
 			img={{ src: frontmatter.image.src, alt: frontmatter.image.alt }}
 		/>
-		<PostContent><slot /></PostContent>
+		<PostContent>
+			<slot />
+		</PostContent>
+
+		<Newsletter />
 	</div>
 </Base>
