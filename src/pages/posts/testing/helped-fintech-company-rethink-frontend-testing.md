@@ -7,7 +7,7 @@ author: 'Radosvet Petrov'
 isPinned: false
 excerpt: "We had flaky E2E tests, low confidence, and a cultural fear of touching tests. Here's how we fixed it."
 image:
-  # src: fintech-refactor.jpg
+  src: /src/pages/posts/testing/coverage-illusion.jpg
   alt: A complex system being simplified visually
 tags: ['testing', 'frontend', 'team-culture']
 # Outline:

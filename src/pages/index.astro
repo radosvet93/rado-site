@@ -8,6 +8,7 @@ import { MarkdownInstance } from 'astro';
 interface Frontmatter {
 	title: string;
 	description?: string;
+	isPublished?: boolean;
 }
 const { title } = AppConfig;
 const { description } = AppConfig;
@@ -16,7 +17,8 @@ const allPosts = Object.values(
 	import.meta.glob<MarkdownInstance<Frontmatter>>('./posts/**/*.md', { eager: true })
 );
 allPosts.sort(sortPostsByDate);
-const latestPosts = allPosts.slice(0, 3);
+const publishedPosts = allPosts.filter((post) => post.frontmatter.isPublished);
+const latestPosts = publishedPosts.slice(0, 3);
 ---
 
 <Base head={{ title, description }}>

@@ -9,7 +9,7 @@ import { sortPostsByDate } from '@/utils/data.util';
 
 export async function getStaticPaths(): Promise<any> {
 	const allPosts = Object.values(
-		import.meta.glob('../posts/*.md', { eager: true })
+		import.meta.glob('../posts/**/*.md', { eager: true })
 	) as MarkdownInstance<any>[];
 
 	const allTags: Set<string> = new Set(
@@ -17,8 +17,9 @@ export async function getStaticPaths(): Promise<any> {
 	);
 
 	return [...allTags].map((tag) => {
-		const filteredPosts = allPosts.filter((post: MarkdownInstance<Record<string, any>>) =>
-			post.frontmatter.tags.includes(tag)
+		const filteredPosts = allPosts.filter(
+			(post: MarkdownInstance<Record<string, any>>) =>
+				post.frontmatter.tags.includes(tag) && post.frontmatter.isPublished
 		);
 
 		// Sort posts by pinned status and date
@@ -54,7 +55,7 @@ const { posts } = Astro.props;
 	<Section>
 		{
 			posts
-				.filter((post: any) => post.frontmatter.tags?.includes(tag))
+				.filter((post: any) => post.frontmatter.tags?.includes(tag) && post.frontmatter.isPublished)
 				.map((post: any) => (
 					<div class="mb-4 basis-1 last:mb-0">
 						<Card post={post} />

@@ -10,6 +10,7 @@ image:
   src: /src/pages/posts/testing/coverage-illusion.jpg
   alt: Hands typing on a laptop
 tags: ['testing', 'career', 'mentoring']
+isPublished: true
 # Outline:
 # Hook: Your early obsession with 100% coverage
 # Reality check: Bugs still leaked; tests were superficial
