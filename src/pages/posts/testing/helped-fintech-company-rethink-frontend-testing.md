@@ -3,7 +3,7 @@ layout: ../../../layouts/post.astro
 title: 'How I Helped a Fintech Company Rethink Frontend Testing'
 pubDate: 2025-07-14
 description: 'Inside the strategy, tooling changes, and cultural shifts that led to more reliable tests.'
-author: 'Radosvet Petrov'
+isPublished: false
 isPinned: false
 excerpt: "We had flaky E2E tests, low confidence, and a cultural fear of touching tests. Here's how we fixed it."
 image:

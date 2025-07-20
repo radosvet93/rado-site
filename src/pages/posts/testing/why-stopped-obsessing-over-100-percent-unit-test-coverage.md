@@ -3,14 +3,12 @@ layout: ../../../layouts/post.astro
 title: 'Why I Stopped Obsessing Over 100% Unit Test Coverage'
 pubDate: 2025-07-07
 description: "How enforced coverage targets led to poor practices—and how focusing on the user helped rebuild confidence."
-author: 'Radosvet Petrov'
 isPinned: false
 excerpt: "Our CI required 100% coverage. Here's how it backfired—and what I now focus on instead."
 image:
   src: /src/pages/posts/testing/coverage-illusion.jpg
-  alt: Hands typing on a laptop
+  alt: A white screen laptop and two hands typing on the laptop
 tags: ['testing', 'career', 'mentoring']
-isPublished: true
 # Outline:
 # Hook: Your early obsession with 100% coverage
 # Reality check: Bugs still leaked; tests were superficial
@@ -33,6 +31,22 @@ But what it actually forced was something else entirely.
 We were using **Enzyme** for all our React testing. It encouraged shallow rendering, isolating components from their children. Most of our tests checked if props were passed down correctly, whether certain elements rendered, or worse: were just **snapshot tests**.
 
 You'd write a test that shallow renders a component, takes a snapshot, and move on. We even started joking internally: _Just snapshot it and it's covered._ It became a running gag unfortunately.
+
+```ts showLineNumbers
+import Form from '../components/Form';
+
+let wrapper;
+
+beforeEach(() => {
+  wrapper = shallow(<Form />);
+});
+
+describe('<Form /> rendering', () => {
+  it('should render correctly', () => {
+    expect(wrapper).toMatchSnapshot();
+  });
+});
+```
 
 We weren't testing how users interacted with our product. We were testing if code existed and the right props are passed down.
 

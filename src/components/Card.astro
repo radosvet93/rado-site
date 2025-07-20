@@ -25,7 +25,7 @@ interface Props {
 			pubDate: string;
 			minutesRead: string;
 			excerpt: string;
-			isPublised: boolean;
+			isPublished: boolean;
 			image: {
 				src: string;
 				alt: string;
@@ -36,9 +36,9 @@ interface Props {
 ---
 
 <a href={post.url}>
-	<div class="h-full rounded-2xl p-1 text-sm dark:bg-red-300">
+	<div class="h-full rounded-2xl p-1 text-sm dark:bg-gray-300 bg-red-200">
 		<div
-			class="flex h-full flex-col rounded-2xl bg-gray-300 p-4 text-gray-900 opacity-90 dark:bg-gray-900 dark:text-white"
+			class="flex h-full flex-col rounded-2xl bg-white p-4 text-gray-900 opacity-90 dark:bg-gray-900 dark:text-white"
 		>
 			<div class="flex-auto">
 				<div class="flex flex-col justify-between gap-2 pb-4 text-xs">
@@ -51,10 +51,10 @@ interface Props {
 				</div>
 			</div>
 
-			<Image src={postImage()} alt={img.alt} width={300} height={150} />
+			<Image src={postImage()} alt={img.alt} width={500} height={280} />
 
-			<p class="pb-4 text-lg font-bold">{post.frontmatter.title}</p>
-			<p class="line-clamp-2">{post.frontmatter.excerpt}</p>
+			<p class="pb-4 text-lg font-bold dark:text-amber-300">{post.frontmatter.title}</p>
+			<p class="line-clamp-3">{post.frontmatter.excerpt}</p>
 		</div>
 	</div>
 </a>

@@ -11,7 +11,7 @@ interface Frontmatter {
 const allPosts = Object.values(
 	import.meta.glob<MarkdownInstance<Frontmatter>>('./posts/**/*.{md,mdx}', { eager: true })
 );
-const publishedPosts = allPosts.filter((post) => post.frontmatter.isPublished);
+const publishedPosts = allPosts.filter((post) => post.frontmatter.isPublished != false);
 publishedPosts.sort(sortPostsByDate);
 const latestPosts = publishedPosts.slice(0, 3);
 ---

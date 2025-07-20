@@ -17,7 +17,7 @@ const allPosts = Object.values(
 	import.meta.glob<MarkdownInstance<Frontmatter>>('./posts/**/*.md', { eager: true })
 );
 allPosts.sort(sortPostsByDate);
-const publishedPosts = allPosts.filter((post) => post.frontmatter.isPublished);
+const publishedPosts = allPosts.filter((post) => post.frontmatter.isPublished != false);
 const latestPosts = publishedPosts.slice(0, 3);
 ---
 

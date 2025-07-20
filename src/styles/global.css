@@ -54,7 +54,7 @@ These styles are for code highlighting that can't be easily implemented with jus
 	}
 
 	.content pre>code[data-line-numbers-max-digits='2']>span[data-line]::before {
-		@apply w-8;
+		@apply w-0;
 	}
 
 	.content code[data-line-numbers-max-digits='3']>span[data-line]::before {
@@ -74,7 +74,7 @@ These styles are for code highlighting that can't be easily implemented with jus
 	.content h4,
 	.content h5,
 	.content h6 {
-		@apply text-amber-600 dark:text-amber-300;
+		@apply text-orange-800 dark:text-amber-300;
 	}
 
 	.content details summary {

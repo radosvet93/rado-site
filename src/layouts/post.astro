@@ -10,11 +10,10 @@ const { description } = AppConfig;
 const { frontmatter } = Astro.props;
 ---
 
-<Base head={{ title: frontmatter.title, description }}>
+<Base head={{ title: `${frontmatter.title} | ${AppConfig.title}`, description }}>
 	<div class="mx-auto w-full max-w-screen-md">
 		<PostHeader
 			title={frontmatter.title}
-			author={frontmatter.author}
 			tags={frontmatter.tags}
 			minutesRead={frontmatter.minutesRead}
 			pubDate={frontmatter.pubDate}
