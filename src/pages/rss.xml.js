@@ -1,4 +1,4 @@
-import rss, { pagesGlobToRssItems } from '@astrojs/rss';
+import rss from '@astrojs/rss';
 import { AppConfig } from '@/utils/AppConfig';
 import { sortPostsByDate } from '@/utils/data.util';
 
