@@ -6,13 +6,13 @@ interface Props {
 	withHref?: boolean;
 }
 
-const { tags, withHref } = Astro.props;
+const { tags, withHref = false } = Astro.props;
 ---
 
 <div class="flex flex-wrap">
 	{
 		tags.map((tag: string) => {
-			const element = <Tag tag={tag} withHref={withHref} />;
+			const element = <Tag tag={tag} />;
 			return withHref ? <a href={`/tags/${tag}`}>{element}</a> : element;
 		})
 	}

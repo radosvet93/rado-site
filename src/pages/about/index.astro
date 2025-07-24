@@ -1,0 +1,117 @@
+---
+import { AppConfig } from '@/utils/AppConfig';
+import Base from '@/layouts/Base.astro';
+import Section from '@/components/Section.astro';
+import Heading from '@/components/Heading.astro';
+
+const { title } = AppConfig;
+const { description } = AppConfig;
+---
+
+<Base head={{ title, description }}>
+	<Section><Heading title="About me" /></Section>
+	<Section>
+		<div class="mx-auto w-full px-4 sm:px-8">
+			<blockquote
+				class="relative grid items-center rounded-xl bg-white shadow-xl lg:grid-cols-2 dark:border-1 dark:bg-stone-800"
+			>
+				<img
+					class="hidden h-full w-full rounded-l-xl object-cover lg:block"
+					src="/images/rado.jpg"
+					style="clip-path: polygon(0 0%, 100% 0%, 75% 100%, 0% 100%);"
+				/>
+
+				<article class="relative p-6 lg:col-span-1 md:p-4">
+					<svg
+						class="text-primary-600 absolute top-0 right-0 -mt-12 -mr-12 hidden h-24 w-24 md:block"
+						width="256"
+						height="256"
+						viewBox="0 0 256 256"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path
+							d="M65.44 153.526V149.526H61.44H20.48C11.3675 149.526 4 142.163 4 133.105V51.4211C4 42.3628 11.3675 35 20.48 35H102.4C111.513 35 118.88 42.3628 118.88 51.4211V166.187C118.88 195.935 95.103 220.165 65.44 220.979V153.526ZM198.56 153.526V149.526H194.56H153.6C144.487 149.526 137.12 142.163 137.12 133.105V51.4211C137.12 42.3628 144.487 35 153.6 35H235.52C244.633 35 252 42.3628 252 51.4211V166.187C252 195.935 228.223 220.165 198.56 220.979V153.526Z"
+							stroke="currentColor"
+							stroke-width="8"></path>
+					</svg>
+
+					<div class="space-y-8">
+						<p class="text-base sm:leading-relaxed">
+							Hey, I'm a senior frontend engineer with 9+ years of experience, transitioning from a
+							professional ice hockey career. I'm passionate about building accessible, well-tested,
+							and user-friendly web applications. My expertise spans <strong
+								class="font-bold text-red-600 dark:text-red-400"
+							>
+								JavaScript, TypeScript, React,</strong
+							> and testing tools like <strong class="font-bold text-red-600 dark:text-red-400"
+								>React Testing Library, Cypress, and Playwright.</strong
+							> I have deep experience with CI/CD pipelines <strong
+								class="font-bold text-red-600 dark:text-red-400">Jenkins, GitHub Actions,</strong
+							> AWS infrastructure, and a strong grasp of web standards, performance, security, and responsive
+							design. I thrive in collaborative, high-impact environments and enjoy mentoring and supporting
+							my teammates.
+						</p>
+
+						<section class="flex items-center space-x-4 md:space-x-0 gap-4">
+							<img class="h-24 w-24 rounded-full lg:hidden" src="/images/rado.jpg" />
+							<span class="text-xl font-bold">Radosvet Petrov</span>
+						</section>
+					</div>
+				</article>
+			</blockquote>
+		</div>
+	</Section>
+	<!-- <Section>
+		<p>
+			I'm a Senior Frontend Engineer based in the UK with over 9 years of experience building fast,
+			accessible, and maintainable web applications. My journey into software wasn't typical —
+			before writing code, I played professional ice hockey and worked in metal fabrication. That
+			discipline and resilience still shape how I approach engineering today.
+		</p>
+	</Section>
+	<Section>
+		<p>
+			I started with the fundamentals — HTML, CSS, JavaScript — and built my way up through
+			internships, agency work, and then one of the largest digital wealth manager platform. Along
+			the way, I've built marketing sites, internal tools, design systems, and enterprise-grade
+			apps.
+		</p>
+	</Section>
+	<Section>
+		<p>
+			My current focus is modern frontend architecture, testing strategies, performance
+			optimisation, and accessibility. I care deeply about writing code that scales, enabling teams
+			to collaborate effectively, and advocating for thoughtful engineering decisions.
+		</p>
+	</Section>
+	<Section>
+		<p>
+			I've conducted 60+ frontend interviews, mentored junior and graduate engineers, and helped
+			shape hiring and engineering standards. Mentoring is especially important to me — I want to
+			give back and support others on their journey, just as others helped me.
+		</p>
+	</Section>
+	<Section>
+		<p>
+			Outside of work, I'm into photography, strength training, and playing guitar — all things that
+			require patience, iteration, and a keen eye for detail (a lot like coding).
+		</p>
+	</Section>
+	<Section>
+		<p>
+			This blog is where I share ideas around frontend development, architecture thinking,
+			mentoring, and career growth. I hope you find something useful here.
+		</p>
+	</Section>
+	<Section>
+		<p>
+			You can also find me on <a
+				href="https://www.linkedin.com/in/radosvet-petrov-7a927011a/"
+				target="_blank"
+				rel="noopener">LinkedIn</a
+			> or reach out via <a href="mailto:radosvet.it@gmail.com">email</a>. I'm always open to
+			mentoring conversations or frontend discussions.
+		</p>
+	</Section> -->
+</Base>

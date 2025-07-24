@@ -3,10 +3,23 @@ import { formatDate } from '@/utils/data.util';
 import Section from './Section.astro';
 import Tags from './Tags.astro';
 import PinnedBadge from './PinnedBadge.astro';
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+const { title, pubDate, tags, minutesRead, img, isPinned = false } = Astro.props;
+
+const postImageGlob = import.meta.glob<{ default: ImageMetadata }>(
+	'/src/pages/posts/**/*.{jpeg,jpg,png,gif}'
+);
+const postImage = postImageGlob[img.src];
+
+if (!postImage)
+	throw new Error(`"${img.src}" does not exist in glob: "src/pages/posts/**/*.{jpeg,jpg,png,gif}"`);
+
+const formattedDate = formatDate(pubDate);
 
 interface Props {
 	title: string;
-	author: string;
 	tags: string[];
 	minutesRead: string;
 	pubDate: string;
@@ -16,25 +29,21 @@ interface Props {
 		alt: string;
 	};
 }
-
-const { title, pubDate, tags, minutesRead, img, isPinned = false } = Astro.props;
-
-const formattedDate = formatDate(pubDate);
 ---
 
 <Section>
 	<div class="flex flex-col items-center">
 		<div class="relative px-14 pt-6 pb-4 text-center">
 			{isPinned && <PinnedBadge size="md" class="absolute top-6 left-10 -translate-y-1/2" />}
-			<p class="text-4xl font-bold">{title}</p>
+			<h1 class="text-4xl font-bold">{title}</h1>
 		</div>
 		<div class="pb-4">
 			<Tags tags={tags} withHref={true} />
 		</div>
-		<div class="text-sm">
+		<div class="pb-4 text-sm">
 			<span>{formattedDate}</span> - <span>{minutesRead}</span>
 		</div>
 
-		{img.src ? <img src={img.src} alt={img.alt} /> : null}
+		<Image src={postImage()} alt={img.alt} width={800} height={600} />
 	</div>
 </Section>

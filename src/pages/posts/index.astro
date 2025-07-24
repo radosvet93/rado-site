@@ -2,29 +2,29 @@
 import { AppConfig } from '@/utils/AppConfig';
 import Base from '@/layouts/Base.astro';
 import Section from '@/components/Section.astro';
-import Card from '@/components/Card.astro';
 import Heading from '@/components/Heading.astro';
 import { sortPostsByDate } from '@/utils/data.util';
 import { MarkdownInstance } from 'astro';
+import Cards from '@/components/Cards.astro';
 
+interface Frontmatter {
+	title: string;
+	description?: string;
+	isPublished?: boolean;
+}
 const { title } = AppConfig;
 const { description } = AppConfig;
 
 const allPosts = Object.values(
-	import.meta.glob('./*.md', { eager: true })
-) as MarkdownInstance<any>[];
+	import.meta.glob<MarkdownInstance<Frontmatter>>('./**/*.{md,mdx}', { eager: true })
+);
 allPosts.sort(sortPostsByDate);
+const publishedPosts = allPosts.filter((post) => post.frontmatter.isPublished != false);
 ---
 
 <Base head={{ title, description }}>
 	<Section><Heading title="Posts" /></Section>
 	<Section>
-		{
-			allPosts.map((post: any) => (
-				<div class="mb-4 basis-1 last:mb-0">
-					<Card post={post} />
-				</div>
-			))
-		}
+		<Cards posts={publishedPosts} />
 	</Section>
 </Base>

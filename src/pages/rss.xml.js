@@ -1,11 +1,25 @@
-import rss, { pagesGlobToRssItems } from '@astrojs/rss';
+import rss from '@astrojs/rss';
+import { AppConfig } from '@/utils/AppConfig';
+import { sortPostsByDate } from '@/utils/data.util';
 
 export async function GET(context) {
+	const allPosts = Object.values(
+		import.meta.glob('./posts/**/*.{md,mdx}', { eager: true })
+	);
+	const publishedPosts = allPosts.filter((post) => post.frontmatter.isPublished != false);
+	publishedPosts.sort(sortPostsByDate);
+	const items = publishedPosts.map((post) => ({
+		title: post.frontmatter.title,
+		description: post.frontmatter.description,
+		pubDate: post.frontmatter.pubDate,
+		link: post.url
+	}));
+
 	return rss({
-		title: 'radosvet.dev - blog',
-		description: 'Radosvet Petrov website',
+		title: AppConfig.title,
+		description: AppConfig.description,
 		site: context.site,
-		items: await pagesGlobToRssItems(import.meta.glob('./posts/*.{md,mdx}')),
+		items,
 		stylesheet: './rss/styles.xsl',
 		customData: `<language>en-gb</language>`
 	});

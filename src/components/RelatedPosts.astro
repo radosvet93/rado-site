@@ -1,0 +1,39 @@
+---
+import { sortPostsByDate } from '@/utils/data.util';
+import { MarkdownInstance } from 'astro';
+interface Frontmatter {
+	title: string;
+	description?: string;
+	isPublished?: boolean;
+	pubDate?: string;
+}
+
+const allPosts = Object.values(
+	import.meta.glob<MarkdownInstance<Frontmatter>>('./posts/**/*.{md,mdx}', { eager: true })
+);
+const publishedPosts = allPosts.filter((post) => post.frontmatter.isPublished != false);
+publishedPosts.sort(sortPostsByDate);
+const latestPosts = publishedPosts.slice(0, 3);
+---
+
+{
+	latestPosts.length > 0 && (
+		<section class="mt-12">
+			<h2 class="mb-4 text-xl font-bold">Related Posts</h2>
+			<ul class="space-y-4">
+				{latestPosts.map((post) => (
+					<li>
+						<a href={post.url} class="font-medium text-blue-600 hover:underline">
+							{post.frontmatter.title}
+						</a>
+						<span class="ml-2 text-sm text-gray-500">
+							{post.frontmatter.pubDate
+								? new Date(post.frontmatter.pubDate).toLocaleDateString()
+								: ''}
+						</span>
+					</li>
+				))}
+			</ul>
+		</section>
+	)
+}
