@@ -20,7 +20,7 @@ const options = {
 					type: 'text',
 					value: ' '
 				}
-			]; 
+			];
 		}
 	},
 	onVisitHighlightedLine(node) {
@@ -39,7 +39,9 @@ export default defineConfig({
 		remarkPlugins: [remarkReadingTime]
 	},
 
-	integrations: [react(), sitemap()],
+	integrations: [react(), sitemap({
+		filter: (page) => page !== 'https://www.radosvet.dev/posts/testing/helped-fintech-company-rethink-frontend-testing/',
+	})],
 	output: 'static',
 
 	adapter: vercelStatic({

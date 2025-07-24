@@ -2,9 +2,9 @@
 layout: ../../../layouts/post.astro
 title: 'Why I Stopped Obsessing Over 100% Unit Test Coverage'
 pubDate: 2025-07-07
-description: "How enforced coverage targets led to poor practices—and how focusing on the user helped rebuild confidence."
+description: "How enforced coverage targets led to poor practices and how focusing on the user helped rebuild confidence."
 isPinned: false
-excerpt: "Our CI required 100% coverage. Here's how it backfired—and what I now focus on instead."
+excerpt: "Our CI pipelines required 100% coverage. Here's how it backfired and what I now focus on instead."
 image:
   src: /src/pages/posts/testing/coverage-illusion.jpg
   alt: A white screen laptop and two hands typing on the laptop
@@ -18,19 +18,21 @@ tags: ['testing', 'career', 'mentoring']
 # Advice to juniors: Focus on behavioural coverage, not line counts
 ---
 
-> You can have 100% coverage and 0% confidence.
+> You Can Have 100% Test Coverage and 0% Confidence
 
-That line hit me hard the first time I heard it — because I'd lived it.
+That line hit me hard the first time I heard it. It stuck with me because I had experienced exactly that.
 
-## The Early Days: 100% or Bust
+## The Early Days: Chasing 100% Coverage Like It Was a Trophy
 
-When I joined a fintech scale-up, our CI pipelines were configured to **fail anything below 100% test coverage**. At the time, that felt like a good thing, who doesn't want a clear quality bar that would force us to test properly.
+When I joined a fast-moving fintech scale-up, our CI pipelines were set up to **reject any code that didn't reach 100% test coverage**. At first, this felt like a positive move. It sounded like a solid quality control measure. After all, who wouldn't want to ensure everything is tested?
 
-But what it actually forced was something else entirely.
+But very quickly, I realised that the reality was very different from the intention.
 
-We were using **Enzyme** for all our React testing. It encouraged shallow rendering, isolating components from their children. Most of our tests checked if props were passed down correctly, whether certain elements rendered, or worse: were just **snapshot tests**.
+We were using Enzyme to test our React components. The approach emphasised shallow rendering, isolating components from their children. Most of our tests weren't about how users interacted with the app. They were about whether the right props were passed or if certain elements showed up. And yes, there were a lot of snapshot tests.
 
-You'd write a test that shallow renders a component, takes a snapshot, and move on. We even started joking internally: _Just snapshot it and it's covered._ It became a running gag unfortunately.
+It got to the point where we had a running joke: “Just snapshot it and it's covered.”
+
+Here's an example of a typical test:
 
 ```ts showLineNumbers
 import Form from '../components/Form';
@@ -48,106 +50,112 @@ describe('<Form /> rendering', () => {
 });
 ```
 
-We weren't testing how users interacted with our product. We were testing if code existed and the right props are passed down.
+Technically, this counted as coverage. But practically, it didn't add any value.
 
-## The Cracks Appear: Bugs in Broad Daylight
+## False Sense of Security: Bugs Still Made It to Production
 
-Despite our flawless coverage reports, we kept seeing bugs leak into production.
+Despite perfect-looking coverage reports, bugs were still slipping through. And not the kind you easily ignore.
 
-Some of them were subtle like for example a checkbox not updating the values on the backend for a minor UX improvement. Others were more serious — broken form validation, full flows failing silently.
+Some were subtle, like a checkbox not updating backend values after a minor UX tweak. Others were more serious, such as broken form validation or full user flows silently failing.
 
-In every case, the culprit was the same: **our tests didn't fail, because they didn't care.**
+The tests didn't catch these issues because they weren't written to. They didn't reflect how real users interacted with the application.
 
-They didn't simulate user journeys. They didn't test component interaction. They were just... there.  
-We were **testing implementation details**, not behaviour.
+Instead of testing behaviour, we were verifying that code existed. And because 100% coverage was enforced, we didn't have much of a choice. We were focused on satisfying the metric, not improving the product.
 
-And because of the enforced 100% coverage, we had no real choice. We couldn't merge unless everything was covered. And covered meant whatever the tool said it was.
+## The Turning Point: Choosing Confidence Over Coverage
 
-## The Turning Point: Leading a Mindset Shift
+Eventually, I reached a breaking point. Something had to change.
 
-At some point, I'd had enough.
+I recommended we switch to [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) to all frontend teams. The tool encourages you to write tests the way users actually experience your app. That means interacting with accessible elements, clicking buttons, typing in inputs, and verifying what shows up on the screen.
 
-I proposed switching to [React Testing Library](https://testing-library.com/) — which focuses on testing components the way users interact with them: querying by accessible labels, simulating real clicks, typing in inputs, verifying DOM behaviour.
+Transitioning wasn't easy.
 
-The transition wasn't easy.
+All frontend teams had grown comfortable with mocking everything and snapshotting their way to green pipelines. React Testing Library required a complete mindset shift. We had to think about how users behaved, not just how code was structured.
 
-The team was used to mocking everything, testing in isolation, and snapshotting their way to green pipelines. Switching to RTL meant rewriting mental models: thinking about **how** users use the app, not just **what** the code does.
+We organised workshops, rewrote documentation, created a testing guild to discuss approach, and slowly replaced our tests with more meaningful ones. Bit by bit, all teams embraced the new approach.
 
-We talked about how testing should reflect **user behaviour**. We ran workshops, wrote extensive documentation, participated in the newly formed testing guild, rewrote all the tests, rewired habits. And slowly, the change took hold.
+Now, we write tests that fail when real user experiences break, like for example if a user fills a form and submits it, does that submission changes the UI. That's how we measure success.
 
-Now, instead of writing tests to appease the coverage gods, we write tests that fail when **users would notice**.
+## It's Not Coverage That's the Problem. It's How You Use It
 
-## Coverage Isn't the Villain — Blind Enforcement Is
+To be clear, test coverage can be useful in the right context.
 
-Let me be fair: test coverage **isn't useless**.
+If you're working on a utility library with pure functions and predictable behaviour, then high coverage of 100% makes sense. It's measurable and meaningful. And for newer teams, it can be a helpful guideline to aim for something tangible.
 
-For example, if you're writing a utility-heavy library like Lodash, high (even 100%) coverage **can** be valuable. You're dealing with pure functions, clear inputs and outputs, and no UI or side effects. It's measurable and meaningful.
+But in product-focused environments where the end user experience is the true measure of success, coverage is a poor indicator of quality.
 
-It also has it's place where the teams are a bit more junior and don't specifically know what to test, at least you are aiming at something even not the best thing to aim for.
+Users don't care if a handler function is tested, if the `onHandleSubmit` is pass to a component. They care if the submit button works, no matter how many times or ways they click it, with mouse, with keyboard, with finger on a touch screen device, with voice commands, with switch/eye tracking devices, the button **MUST** work.
 
-But for **product-focused development**, where we measure our code confidence not in the test coverage reports, but what the users see and interact with, it's a poor proxy for confidence.
+When teams enforce 100% coverage without context, it leads to:
 
-Users don't care if `onChangeHandler.ts` is covered, or if we passed down the correct prop that has something to do with analytics and it's not part of the UI. They care whether the submit button works — every time, in every scenario, no more rage clicks.
+- Writing tests that don't matter
+- Fragile code due to overuse of snapshots
+- Fear of refactoring, those tests don't bring you confidence
+- Wasted effort on covering irrelevant lines
 
-Blindly enforcing 100% leads to:
+I've personally spent hours figuring out how to trigger obscure conditionals just to satisfy a coverage requirement. That time could've been better spent exploring edge cases or improving the user experience.
 
-- **Testing irrelevant things**
-- **Writing fragile, low-value tests**
-- **Avoiding refactors for fear of breaking snapshots**
-- **Wasting time figuring out how to hit a metric, not how to improve a product**
+## The New Mindset: Testing for Real Confidence
 
-We lost hours trying to find clever hacks to make conditional line covered. That time would've been far better spent thinking about the feature's edge cases or real-world usage.
+Since making the switch, everything has improved.
 
-## The Shift: From Coverage to Confidence
+We still write tests, and lots of them. We mainly focus on the integration testing, instead of purely on unit testing and we are much closer to what is described as a [testing trophy by Kent C. Dodds](https://kentcdodds.com/blog/the-testing-trophy-and-testing-classifications). But now, they're meaningful. We simulate real user flows, care about what's visible on the screen, we care about accessibility more and we mock less.
 
-Since shifting our mindset, everything changed.
+Our team discussions became more thoughtful too. We now ask questions like:
 
-We start with the testing in mind. We still write tests — lots of them. But they're meaningful now. We simulate flows. We assert against visible outcomes. We mock less and care more.
+- How would a user trigger this action?
+- Can we use a more accessible selector?
+- What happens if the API call fails?
+- Can this be navigated with a keyboard?
 
-The conversations improved too.
-We started asking:
+We gained a deeper understanding of the product. We found more bugs before release. And we became faster because we trusted our test suite again. Our product have a clear documentation that is stored in our test files, when we are not sure about a certain behaviour it's very easy just to look at the tests and see what we expect to happened.
 
-- How would the user trigger this?
-- Do we have a more accessible selector we can use?
-- Is this action possible?
-- What happens when the API fails?
-- Can someone keyboard-navigate this screen?
+Interestingly, our test coverage did drop a bit. We're now hovering around 97%. But no one is worried about hitting 100% any more.
 
-We understood our product better.  
-We caught more bugs before release.  
-We even got faster at delivering — because we trusted our tests again.
+Because we're testing what matters, not just what's measurable.
 
-And yes, our test coverage dropped — slightly. We're now hovering around **97%**.  
-But no one is chasing 100% any more. We don't need to.
+## Don't Fall for the 100% Trap
 
-Because we're testing the **right things**, not **all the things**.
+If you're just starting your career, I get the appeal of 100% coverage. It's a concrete goal that feels impressive during code reviews.
 
-## Final Advice to Junior Engineers
+But here's the truth:
 
-If you're starting out and thinking 100% coverage is the gold standard — I get it. It's concrete. It's visible. It looks impressive in a PR review.
+- A test is only useful if it catches real bugs
+- Coverage is not the end goal, it's just a signal
+- Snapshot tests don't explain how your app behaves
+- You're building software for people, not just tools
 
-But trust me on this:
+Next time you write a test, ask yourself this:
 
-- **Tests are only as valuable as the bugs they catch.**
-- **Coverage is a lagging metric — not a goal.**
-- **You're writing software for people, not linters.**
-- **Your tests are your documentation, writing snapshot tests doesn't inform you about anything**
+> If this breaks, would a user notice? And would this test catch it?
 
-So next time you write a test, ask yourself:  
-> If this breaks, will a user be affected? And will this test let us know?
+If your answer is yes, then you're doing exactly what you should be.
 
-If the answer is yes — you're doing it right.
+## Final Thoughts: Focus on What Really Matters
+
+Test coverage is a number. Confidence is what you feel when you trust your code.
+
+Let your users, not your linters, guide your testing strategy. Build tests that reflect real-world use, and you'll ship with peace of mind, every time.
 
 ---
 
 <details>
 <summary><strong>📖 FAQ</strong></summary>
 
-- **Q: Does this mean coverage is useless?**  
-  A: Not at all — just that it needs context. Use it as a signal, not a goal.
+- **Is 100% test coverage ever a good idea?**  
+  It can be, especially in libraries with pure functions or for early-stage teams that need structure. But it shouldn't be your only goal.
 
-- **Q: Should I stop using Enzyme or snapshot testing?**  
-  A: Yes, in most cases. Prefer tools that prioritise user interaction and real behaviour.
+- **Is snapshot testing bad?**  
+  Not always. But relying on it too much can lead to fragile tests that don't catch actual bugs.
+
+- **How can I shift my team's testing mindset?**  
+  Start small. Introduce better tools, run workshops, explain the benefits, and lead by example with tests that mimic real user behaviour.
+
+- **Isn't enforcing coverage good for junior devs?**  
+  It can offer a starting point, but should be flexible. What matters more is teaching them what and why to test.
+
+- **How do I know if my test suite is reliable?**  
+  It should break when something a user would notice breaks. Test real scenarios, simulate flows, and prioritise accessibility.
 
 </details>
 
