@@ -39,9 +39,7 @@ export default defineConfig({
 		remarkPlugins: [remarkReadingTime]
 	},
 
-	integrations: [react(), sitemap({
-		filter: (page) => page !== 'https://www.radosvet.dev/posts/testing/helped-fintech-company-rethink-frontend-testing/',
-	})],
+	integrations: [react(), sitemap()],
 	output: 'static',
 
 	adapter: vercelStatic({

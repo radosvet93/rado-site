@@ -1,7 +1,7 @@
 ---
 layout: ../../../layouts/post.astro
 title: 'Why I Stopped Obsessing Over 100% Unit Test Coverage'
-pubDate: 2025-07-07
+pubDate: 2025-04-17
 description: "How enforced coverage targets led to poor practices and how focusing on the user helped rebuild confidence."
 isPinned: false
 excerpt: "Our CI pipelines required 100% coverage. Here's how it backfired and what I now focus on instead."
