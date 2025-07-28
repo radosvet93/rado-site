@@ -65,7 +65,7 @@ const publishedPosts = posts.filter(
 );
 ---
 
-<Base head={{ title, description }}>
+<Base head={{ title: `Tag: ${tag} | ${title}`, description }}>
 	<Section>
 		<Heading title={`Posts with #${tag}`} />
 		<div class="pt-2 text-center">

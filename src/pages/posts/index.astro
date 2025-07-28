@@ -22,7 +22,7 @@ allPosts.sort(sortPostsByDate);
 const publishedPosts = allPosts.filter((post) => post.frontmatter.isPublished != false);
 ---
 
-<Base head={{ title, description }}>
+<Base head={{ title: `Blog | ${title}`, description }}>
 	<Section><Heading title="Posts" /></Section>
 	<Section>
 		<Cards posts={publishedPosts} />
