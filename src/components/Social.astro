@@ -8,6 +8,7 @@ const { href } = Astro.props;
 
 <div class="h-10 w-24 rounded-xl bg-gray-200/50">
 	<a
+		aria-label={`Link to ${href}`}
 		href={href}
 		target="_blank"
 		class="flex h-full w-full items-center justify-center rounded-xl bg-gray-300 p-2 text-gray-900 opacity-90 dark:bg-gray-800 dark:text-white"
