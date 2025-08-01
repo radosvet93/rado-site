@@ -3,9 +3,7 @@ import { AppConfig } from '@/utils/AppConfig';
 import { sortPostsByDate } from '@/utils/data.util';
 
 export async function GET(context) {
-	const allPosts = Object.values(
-		import.meta.glob('./posts/**/*.{md,mdx}', { eager: true })
-	);
+	const allPosts = Object.values(import.meta.glob('./posts/**/*.{md,mdx}', { eager: true }));
 	const publishedPosts = allPosts.filter((post) => post.frontmatter.isPublished != false);
 	publishedPosts.sort(sortPostsByDate);
 	const items = publishedPosts.map((post) => ({
