@@ -2,7 +2,7 @@
 
 ---
 
-<section class="bg-gray-200 px-4 py-12">
+<section class="bg-gray-200 mx-4 px-4 py-12">
 	<div class="mx-auto max-w-xl text-center">
 		<h2 class="mb-2 text-2xl font-bold dark:text-gray-600">Join my newsletter</h2>
 		<p class="mb-6 text-gray-600">
@@ -12,9 +12,8 @@
 
 		<form
 			id="newsletter-form"
-			action="https://app.convertkit.com/forms/8324343/subscriptions"
+			action="#"
 			method="POST"
-			target="hidden-iframe"
 			class="mt-4 flex w-full flex-col items-start gap-4 sm:flex-row sm:items-center"
 		>
 			<input
@@ -28,36 +27,53 @@
 
 			<button
 				type="submit"
-				class="rounded-md bg-pink-600 px-6 py-2 text-base font-medium text-white transition hover:bg-pink-700 cursor-pointer"
+				class="cursor-pointer rounded-md bg-pink-600 px-6 py-2 text-base font-medium text-white transition hover:bg-pink-700"
 			>
 				Subscribe
 			</button>
 
 			<div id="form-success" class="hidden font-medium text-green-600">
-				✅ You’ve been subscribed!
+				✅ You've been subscribed!
 			</div>
 		</form>
-
-		<iframe name="hidden-iframe" class="hidden"></iframe>
 	</div>
 </section>
 
 <script is:inline>
-	document.addEventListener('DOMContentLoaded', () => {
-		const form = document.getElementById('newsletter-form');
-		const success = document.getElementById('form-success');
+	const form = document.getElementById('newsletter-form');
+	const emailInput = document.getElementById('email');
+	const successMessage = document.getElementById('form-success');
 
-		if (!form || !success) return;
+	form.addEventListener('submit', async (e) => {
+		e.preventDefault();
 
-		form.addEventListener('submit', () => {
-			setTimeout(() => {
+		const email = emailInput.value;
+		if (!email) return;
+
+		try {
+			const res = await fetch('https://api.convertkit.com/v3/forms/8324343/subscribe', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({
+					email,
+					api_key: 'SOljMeSJn9djxYTI9-lAyA',
+					form_id: '8324343'
+				})
+			});
+
+			if (res.ok) {
 				form.reset();
-				success.classList.remove('hidden');
+				successMessage.classList.remove('hidden');
 
 				setTimeout(() => {
-					success.classList.add('hidden');
+					successMessage.classList.add('hidden');
 				}, 5000);
-			}, 1200);
-		});
+			} else {
+				alert('Subscription failed. Please try again.');
+			}
+		} catch (err) {
+			console.error(err);
+			alert('Network error.');
+		}
 	});
 </script>
