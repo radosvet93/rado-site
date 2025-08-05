@@ -10,7 +10,8 @@
 		"preview": "astro preview",
 		"astro": "astro",
 		"lint": "eslint src/**/*.{ts,js,astro}",
-		"format": "prettier --write ."
+		"format": "prettier --write .",
+		"prepare": "husky"
 	},
 	"dependencies": {
 		"@astrojs/check": "0.9.4",
@@ -35,6 +36,7 @@
 		"@types/react": "19.1.2",
 		"@types/react-dom": "19.1.2",
 		"canvas-confetti": "1.9.3",
+		"husky": "^9.1.7",
 		"mdast-util-to-string": "4.0.0",
 		"prettier": "3.5.3",
 		"prettier-plugin-astro": "0.14.1",
