@@ -9,5 +9,5 @@ export type PostFrontmatter = {
 		src: string;
 		alt: string;
 	};
-  tags: string[];
+	tags: string[];
 };
