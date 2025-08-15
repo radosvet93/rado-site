@@ -2,12 +2,13 @@
 import Section from './Section.astro';
 import { MarkdownInstance } from 'astro';
 import Cards from './Cards.astro';
+import type { PostFrontmatter } from '@/types';
 
-interface Props {
-	posts: MarkdownInstance<any>[];
-}
+type Props = {
+	posts: MarkdownInstance<PostFrontmatter>[];
+};
 
-const { posts } = Astro.props;
+const { posts } = Astro.props as Props;
 ---
 
 <Section>

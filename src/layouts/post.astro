@@ -4,8 +4,13 @@ import Base from '@/layouts/Base.astro';
 import PostHeader from '@/components/PostHeader.astro';
 import PostContent from '@/components/PostContent.astro';
 import Newsletter from '@/components/Newsletter.astro';
+import type { PostFrontmatter } from '@/types';
 
 const { description } = AppConfig;
+
+type Props = {
+	frontmatter: PostFrontmatter;
+};
 
 const { frontmatter } = Astro.props;
 ---
@@ -18,7 +23,8 @@ const { frontmatter } = Astro.props;
 			minutesRead={frontmatter.minutesRead}
 			pubDate={frontmatter.pubDate}
 			isPinned={frontmatter.isPinned}
-			img={{ src: frontmatter.image.src, alt: frontmatter.image.alt }}
+			excerpt={frontmatter.excerpt}
+			image={{ src: frontmatter.image.src, alt: frontmatter.image.alt }}
 		/>
 		<PostContent>
 			<slot />

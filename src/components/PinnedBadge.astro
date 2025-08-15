@@ -1,10 +1,10 @@
 ---
 import PinIcon from './PinIcon.astro';
 
-interface Props {
+type Props = {
 	size?: 'sm' | 'md' | 'lg';
 	class?: string;
-}
+};
 
 const { size = 'md', class: className = '' } = Astro.props;
 

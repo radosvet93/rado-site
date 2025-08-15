@@ -5,16 +5,13 @@ import Hero from '@/components/Hero.astro';
 import LatestPosts from '@/components/LatestPosts.astro';
 import { sortPostsByDate } from '@/utils/data.util';
 import { MarkdownInstance } from 'astro';
-interface Frontmatter {
-	title: string;
-	description?: string;
-	isPublished?: boolean;
-}
+import type { PostFrontmatter } from '@/types';
+
 const { title } = AppConfig;
 const { description } = AppConfig;
 
 const allPosts = Object.values(
-	import.meta.glob<MarkdownInstance<Frontmatter>>('./posts/**/*.md', { eager: true })
+	import.meta.glob<MarkdownInstance<PostFrontmatter>>('./posts/**/*.md', { eager: true })
 );
 allPosts.sort(sortPostsByDate);
 const publishedPosts = allPosts.filter((post) => post.frontmatter.isPublished != false);

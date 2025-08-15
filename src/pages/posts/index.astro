@@ -6,17 +6,13 @@ import Heading from '@/components/Heading.astro';
 import { sortPostsByDate } from '@/utils/data.util';
 import { MarkdownInstance } from 'astro';
 import Cards from '@/components/Cards.astro';
+import type { PostFrontmatter } from '@/types';
 
-interface Frontmatter {
-	title: string;
-	description?: string;
-	isPublished?: boolean;
-}
 const { title } = AppConfig;
 const { description } = AppConfig;
 
 const allPosts = Object.values(
-	import.meta.glob<MarkdownInstance<Frontmatter>>('./**/*.{md,mdx}', { eager: true })
+	import.meta.glob<MarkdownInstance<PostFrontmatter>>('./**/*.{md,mdx}', { eager: true })
 );
 allPosts.sort(sortPostsByDate);
 const publishedPosts = allPosts.filter((post) => post.frontmatter.isPublished != false);

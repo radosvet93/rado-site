@@ -1,15 +1,10 @@
 ---
 import { sortPostsByDate } from '@/utils/data.util';
 import { MarkdownInstance } from 'astro';
-interface Frontmatter {
-	title: string;
-	description?: string;
-	isPublished?: boolean;
-	pubDate?: string;
-}
+import type { PostFrontmatter } from '@/types';
 
 const allPosts = Object.values(
-	import.meta.glob<MarkdownInstance<Frontmatter>>('./posts/**/*.{md,mdx}', { eager: true })
+	import.meta.glob<MarkdownInstance<PostFrontmatter>>('./posts/**/*.{md,mdx}', { eager: true })
 );
 const publishedPosts = allPosts.filter((post) => post.frontmatter.isPublished != false);
 publishedPosts.sort(sortPostsByDate);

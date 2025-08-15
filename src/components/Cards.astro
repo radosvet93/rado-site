@@ -1,27 +1,15 @@
 ---
 import Card from './Card.astro';
+import type { PostFrontmatter } from '@/types';
+
+type Post = {
+	url: string;
+	frontmatter: PostFrontmatter;
+};
 
 const { posts } = Astro.props;
-
-interface PostsProps {
-	posts: {
-		url: string;
-		frontmatter: {
-			title: string;
-			isPinned?: boolean;
-			pubDate: string;
-			minutesRead: string;
-			excerpt: string;
-			isPublished?: boolean;
-			image: {
-				src: string;
-				alt: string;
-			};
-		};
-	}[];
-}
 ---
 
 <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-	{posts.map((post: PostsProps['posts'][0]) => <Card post={post} />)}
+	{posts.map((post: Post) => <Card post={post} />)}
 </div>

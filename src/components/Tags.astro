@@ -1,10 +1,10 @@
 ---
 import Tag from './Tag.astro';
 
-interface Props {
+type Props = {
 	tags: string[];
 	withHref?: boolean;
-}
+};
 
 const { tags, withHref = false } = Astro.props;
 ---
