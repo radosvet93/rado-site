@@ -15,7 +15,7 @@ const allPosts = Object.values(
 );
 allPosts.sort(sortPostsByDate);
 const publishedPosts = allPosts.filter((post) => post.frontmatter.isPublished != false);
-const latestPosts = publishedPosts.slice(0, 3);
+const latestPosts = publishedPosts.slice(0, 6);
 ---
 
 <Base head={{ title, description }}>

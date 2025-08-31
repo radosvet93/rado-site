@@ -8,7 +8,7 @@ const allPosts = Object.values(
 );
 const publishedPosts = allPosts.filter((post) => post.frontmatter.isPublished != false);
 publishedPosts.sort(sortPostsByDate);
-const latestPosts = publishedPosts.slice(0, 3);
+const latestPosts = publishedPosts.slice(0, 6);
 ---
 
 {
