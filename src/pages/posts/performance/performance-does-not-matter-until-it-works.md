@@ -6,7 +6,7 @@ description: 'Why performance means nothing without correctness, and why clarity
 isPinned: false
 excerpt: 'Performance is only valuable once your code works, is correct, and is readable. Build in that order and only optimise where it matters.'
 image:
-  src: /src/pages/posts/performance/performance-does-not-matter-until-it-works.jpg
+  src: /src/pages/posts/performance/_performance-does-not-matter-until-it-works.jpg
   alt: 'A balance scale with clarity and performance in tension'
 tags: ['performance', 'best practices', 'craftsmanship', 'readability']
 ---

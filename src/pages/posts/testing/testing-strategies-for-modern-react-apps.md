@@ -5,7 +5,7 @@ pubDate: 2025-04-22
 description: 'A beginner-friendly guide to testing React apps using React Testing Library, Playwright, focusing on maintainable and reliable tests.'
 tags: ['react', 'testing', 'visual-regression', 'frontend']
 image:
-  src: '/src/pages/posts/testing/testing-strategies-react.jpg'
+  src: '/src/pages/posts/testing/_testing-strategies-react.jpg'
   alt: Abstract image of an orange painting, describing the modern element in the strategies for modern react apps
 excerpt: "Testing React apps doesn't have to be scary. Learn the basics of unit, integration, and visual regression testing with popular tools."
 ---

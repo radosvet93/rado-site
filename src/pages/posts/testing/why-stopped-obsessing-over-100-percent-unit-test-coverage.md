@@ -6,7 +6,7 @@ description: 'How enforced coverage targets led to poor practices and how focusi
 isPinned: false
 excerpt: "Our CI pipelines required 100% coverage. Here's how it backfired and what I now focus on instead."
 image:
-  src: /src/pages/posts/testing/coverage-illusion.jpg
+  src: /src/pages/posts/testing/_coverage-illusion.jpg
   alt: A white screen laptop and two hands typing on the laptop
 tags: ['testing', 'career', 'mentoring']
 # Outline:

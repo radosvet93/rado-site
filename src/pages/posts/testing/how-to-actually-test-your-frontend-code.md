@@ -6,7 +6,7 @@ description: "Writing tests that matter is hard. Here's how shifting my mindset 
 isPinned: false
 excerpt: 'Writing tests on the frontend that matter is hard. What exactly to test can feel a bit mysterious and can lead to bad practices of either test the wrong things or testing less critical stuff on the page'
 image:
-  src: /src/pages/posts/testing/sticky-notes.jpg
+  src: /src/pages/posts/testing/_sticky-notes.jpg
   alt: A messy table full with sticky notes and pens
 tags: ['testing', 'frontend', 'career']
 ---
