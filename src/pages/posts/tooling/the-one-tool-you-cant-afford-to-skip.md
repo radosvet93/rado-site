@@ -6,8 +6,8 @@ description: 'Why ESLint is not an optional tool, but an essential foundation fo
 isPinned: false
 excerpt: 'Forget frameworks and libraries. The most powerful tool for a junior developer is ESLint. It forces consistency, catches bugs, and makes you a better programmer.'
 image:
-  src: /src/pages/posts/tooling/_the-one-tool-you-cant-afford-to-skip.jpg
-  alt: 'A tidy desk with organised tools versus a messy, cluttered desk.'
+  src: /src/pages/posts/tooling/_the-one-tool-you-cant-afford-to-skip.jpg
+  alt: 'A tidy desk with organised tools versus a messy, cluttered desk.'
 tags: ['eslint', 'tooling', 'best practices', 'code quality']
 ---
 
@@ -16,8 +16,6 @@ tags: ['eslint', 'tooling', 'best practices', 'code quality']
 Imagine you're building a house. You've got the blueprints, the materials, and a great team. But what if one person uses a different kind of nail for every board, another forgets to secure a few beams, and a third decides to randomly change the window sizes? The house would be a mess. It might even fall apart.
 
 This is what happens to codebases without a **consistent** set of rules. For junior developers, getting your code to "work" is the first milestone. But writing code that's **maintainable, readable, and consistent** is the next, and arguably more important, step. This is where **ESLint** comes in.
-
----
 
 ## Why ESLint is Non-Negotiable
 
@@ -29,8 +27,6 @@ Here's what it gives you:
 - **It stops endless style debates:** Tabs vs. spaces, single vs. double quotes—these are debates no one wants to have. With ESLint, you set the rules once, and the tool enforces them for everyone. This frees up code review time to focus on what really matters: **logic and architecture**.
 - **It makes you a better developer:** By pointing out common antipatterns and inconsistencies, ESLint trains you to write cleaner, more robust code. Think of it as a mentor that's always looking over your shoulder, gently correcting you.
 - **It makes teamwork painless:** When every developer on a team writes code that looks the same and follows the same rules, the codebase becomes one unified piece of work, not a collection of different styles. It makes the team work and think more closely, aligning everyone toward a single, cohesive end goal.
-
----
 
 ## A Real-World Example: JS to TS Migration
 
@@ -44,8 +40,6 @@ Because I insisted on a solid ESLint setup first, our team was able to focus on 
 
 This experience solidified my belief: ESLint isn't an option. It's a prerequisite for any healthy, productive codebase.
 
----
-
 ## Your First ESLint Setup
 
 Ready to get started? Here's the simplest way to add ESLint to your project:
@@ -58,8 +52,6 @@ Ready to get started? Here's the simplest way to add ESLint to your project:
 3.  **Integrate it into your workflow:** Set up your code editor to automatically fix issues on save. For an even more robust setup, add a **pre-commit hook** with a tool like [Husky](https://typicode.github.io/husky/) to prevent any code that fails the linting rules from ever making it into your codebase.
 
 Once it's set up, you can stop thinking about it. ESLint will just be there, quietly working in the background, keeping your codebase healthy and consistent.
-
----
 
 ## Conclusion
 
