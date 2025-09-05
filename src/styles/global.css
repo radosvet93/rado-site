@@ -84,7 +84,6 @@ These styles are for code highlighting that can't be easily implemented with jus
 
 @theme {
 	--font-sans: 'Funnel Sans';
-	/* --font-mono: 'PT Mono'; */
 	--font-mono: 'Space Mono';
 }
 
