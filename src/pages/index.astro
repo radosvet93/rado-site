@@ -21,4 +21,7 @@ const latestPosts = publishedPosts.slice(0, 6);
 <Base head={{ title, description }}>
 	<Hero />
 	<LatestPosts posts={latestPosts} />
+	<div class="flex justify-center">
+		<a class="cursor-pointer rounded-md bg-pink-600 px-6 py-2 text-base font-medium text-white transition hover:bg-pink-700" href="/posts">Read more</a>
+	</div>
 </Base>
