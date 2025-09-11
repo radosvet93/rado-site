@@ -1,0 +1,46 @@
+---
+import { AppConfig } from '@/utils/AppConfig';
+import Base from '@/layouts/Base.astro';
+import Section from '@/components/Section.astro';
+import Heading from '@/components/Heading.astro';
+import { Image } from 'astro:assets';
+import { projects } from './constants';
+
+const { title } = AppConfig;
+const { description } = AppConfig;
+---
+
+<Base head={{ title: `Projects | ${title}`, description }}>
+	<Section><Heading title="Projects" /></Section>
+	<Section>
+		<div class="grid grid-cols-2 gap-4 lg:grid-cols-3">
+			{
+				projects.map((project) => (
+					<a
+						class="flex h-full flex-col shadow-lg transition-shadow duration-300 hover:shadow-sm"
+						href={project.url}
+						target="_blank"
+					>
+						<div class="flex-1 bg-stone-50 text-gray-950">
+							<Image
+								class="h-auto object-cover sm:h-28 md:h-38 lg:h-34 xl:h-38"
+								src={project.image.src}
+								alt={project.image.alt}
+								width={700}
+								height={350}
+							/>
+							<div class="p-4">
+								<h2 class="mb-4 text-lg font-bold text-orange-600">{project.title}</h2>
+								<p class="text-sm">{project.description}</p>
+							</div>
+						</div>
+						<div class="flex flex-col justify-between bg-amber-300 px-4 py-2 text-xs text-gray-950 sm:flex-row">
+							<p>{project.tech}</p>
+							<p>{project.industry}</p>
+						</div>
+					</a>
+				))
+			}
+		</div>
+	</Section>
+</Base>
