@@ -3,7 +3,7 @@ layout: ../../../layouts/post.astro
 title: 'Testing Strategies for Modern React Apps: Unit, Integration, and Visual Regression'
 pubDate: 2025-04-22
 description: 'A beginner-friendly guide to testing React apps using React Testing Library, Playwright, focusing on maintainable and reliable tests.'
-tags: ['react', 'testing', 'visual-regression', 'frontend']
+tags: ['react', 'testing', 'visual-regression', 'frontend', 'code-quality']
 image:
   src: '/src/pages/posts/testing/_testing-strategies-react.jpg'
   alt: Abstract image of an orange painting, describing the modern element in the strategies for modern react apps

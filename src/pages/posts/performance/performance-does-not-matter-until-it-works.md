@@ -8,7 +8,7 @@ excerpt: 'Performance is only valuable once your code works, is correct, and is 
 image:
   src: /src/pages/posts/performance/_performance-does-not-matter-until-it-works.jpg
   alt: 'Abstract image of yellow painting'
-tags: ['performance', 'best-practices', 'frontend', 'readability']
+tags: ['performance', 'best-practices', 'frontend', 'mindset']
 ---
 
 > I've seen it happen a couple of times, someone (me including) spends hours micro-optimising some front end code, only to discover later that the feature didn't even meet the business requirements or a valid edge case was missing completely.

@@ -8,7 +8,7 @@ excerpt: 'Forget frameworks and libraries. The most powerful tool for a junior d
 image:
   src: /src/pages/posts/tooling/_the-one-tool-you-cant-afford-to-skip.jpg
   alt: 'A brick wall, symbolising the strong foundation with a tool like ESLint'
-tags: ['eslint', 'tooling', 'best-practices', 'code-quality']
+tags: ['tooling', 'mentoring', 'best-practices', 'code-quality']
 ---
 
 ## The One Tool You Can't Afford to Skip (Hint: It's Not a Framework)

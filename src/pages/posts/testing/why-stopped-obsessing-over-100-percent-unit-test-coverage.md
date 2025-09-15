@@ -8,7 +8,7 @@ excerpt: "Our CI pipelines required 100% coverage. Here's how it backfired and w
 image:
   src: /src/pages/posts/testing/_coverage-illusion.jpg
   alt: A white screen laptop and two hands typing on the laptop
-tags: ['testing', 'career', 'mentoring', 'frontend']
+tags: ['testing', 'career', 'mentoring', 'frontend', 'code-quality']
 ---
 
 > You Can Have 100% Test Coverage and 0% Confidence

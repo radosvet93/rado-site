@@ -8,7 +8,7 @@ excerpt: 'Writing tests on the frontend that matter is hard. What exactly to tes
 image:
   src: /src/pages/posts/testing/_sticky-notes.jpg
   alt: A messy table full with sticky notes and pens
-tags: ['testing', 'frontend', 'career']
+tags: ['testing', 'frontend', 'career', 'mindset', 'code-quality']
 ---
 
 ## Why Are Tests So Hard?
