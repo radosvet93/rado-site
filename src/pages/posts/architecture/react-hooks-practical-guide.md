@@ -37,17 +37,18 @@ By abstracting repetitive logic into reusable **custom hooks**, you can signific
 Let's dive into some of the most fundamental hooks and a common pitfall to watch out for.
 
 ### useState
+
 This is your go-to hook for managing state within a component.
 
 ```jsx showLineNumbers
 function DarkModeToggle() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+	const [isDarkMode, setIsDarkMode] = useState(false);
 
-  return (
-    <button onClick={() => setIsDarkMode(!isDarkMode)}>
-      {isDarkMode ? 'Light Mode' : 'Dark Mode'}
-    </button>
-  );
+	return (
+		<button onClick={() => setIsDarkMode(!isDarkMode)}>
+			{isDarkMode ? 'Light Mode' : 'Dark Mode'}
+		</button>
+	);
 }
 ```
 
@@ -66,7 +67,7 @@ function PostList() {
       .then(response => response.json())
       .then(data => setPosts(data));
   }, []); // The empty dependency array means this runs only once on mount
-  
+
   return (
     // ...render list of posts
   );
@@ -88,8 +89,8 @@ return <div className={theme}>Hello</div>;
 
 Keeps a stable reference across renders. Useful for DOM elements or values you don't want to trigger re-renders.
 
-```jsx showLineNumbers
-const inputRef = useRef<HTMLInputElement>(null);
+```tsx showLineNumbers
+const inputRef = useRef<HTMLInputElement>null;
 ```
 
 ## Advanced & Practical Hooks
@@ -101,6 +102,7 @@ For more complex apps, you'll often reach for these:
 - **Custom hooks**: abstract repetitive logic, e.g. data fetching, debouncing, or feature toggles.
 
 ## Pitfalls & Anti-Patterns
+
 From my experience, here are some common mistakes I see developers make with hooks:
 
 - **Overusing `useEffect`:** It's common to see `useEffect` used to "sync" two pieces of state. Instead, try to **derive state** from existing state whenever possible. If `B` depends on `A`, calculate `B` from `A` directly rather than using a `useEffect`.
@@ -108,26 +110,28 @@ From my experience, here are some common mistakes I see developers make with hoo
 - **Forgetting Cleanup Functions:** For effects that involve subscriptions, event listeners, or timers, always return a cleanup function from your `useEffect`. This prevents memory leaks and subtle bugs.
 
 ## Best Practices for Using React Hooks
+
 - **Start Simple:** Don't try to solve every problem with a custom hook. Let the component's needs dictate the abstraction.
 - **Co-locate:** Keep hooks close to the code they relate to. If a `useState` and `useEffect` are only used for one component, keep them in that component. Don't move them into a generic file "just in case."
 - **Use TypeScript:** It's a lifesaver for custom hooks. Strong typing on your hook's inputs and outputs ensures they are used correctly and helps your editor provide better auto-completion.
 - **Test Custom Hooks:** A well-tested custom hook is a joy to work with. Use a testing library to ensure your hooks behave as expected.
 
 ## Real-World Example: A Custom Hook Done Right
+
 A perfect example of a custom hook is one that debounces a value, like user input in a search bar. This prevents us from making an API call on every keystroke.
 
 ```tsx showLineNumbers
 import { useState, useEffect } from 'react';
 
 export function useDebounce<T>(value: T, delay: number): T {
-  const [debounced, setDebounced] = useState(value);
+	const [debounced, setDebounced] = useState(value);
 
-  useEffect(() => {
-    const handler = setTimeout(() => setDebounced(value), delay);
-    return () => clearTimeout(handler);
-  }, [value, delay]);
+	useEffect(() => {
+		const handler = setTimeout(() => setDebounced(value), delay);
+		return () => clearTimeout(handler);
+	}, [value, delay]);
 
-  return debounced;
+	return debounced;
 }
 ```
 
@@ -135,27 +139,24 @@ This hook is simple, has a single purpose, and can be easily tested. Now, our se
 
 ```tsx showLineNumbers
 const SearchInput = () => {
-  const [searchTerm, setSearchTerm] = useState('');
-  const debouncedSearchTerm = useDebounce(searchTerm, 500);
+	const [searchTerm, setSearchTerm] = useState('');
+	const debouncedSearchTerm = useDebounce(searchTerm, 500);
 
-  // Now you can safely make an API call with `debouncedSearchTerm`
-  useEffect(() => {
-    if (debouncedSearchTerm) {
-      // make API call here
-    }
-  }, [debouncedSearchTerm]);
+	// Now you can safely make an API call with `debouncedSearchTerm`
+	useEffect(() => {
+		if (debouncedSearchTerm) {
+			// make API call here
+		}
+	}, [debouncedSearchTerm]);
 
-  return (
-    <input
-      type="text"
-      placeholder="Search..."
-      onChange={e => setSearchTerm(e.target.value)}
-    />
-  );
-}
+	return (
+		<input type="text" placeholder="Search..." onChange={(e) => setSearchTerm(e.target.value)} />
+	);
+};
 ```
 
 ## Recap / TL;DR
+
 - React hooks simplify state and side-effect management.
 - Master the basics (`useState`, `useEffect`) before jumping into advanced hooks.
 - Repetition is better than premature abstraction.
