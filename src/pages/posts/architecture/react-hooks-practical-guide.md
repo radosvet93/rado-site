@@ -90,7 +90,7 @@ return <div className={theme}>Hello</div>;
 Keeps a stable reference across renders. Useful for DOM elements or values you don't want to trigger re-renders.
 
 ```tsx showLineNumbers
-const inputRef = useRef<HTMLInputElement>null;
+const inputRef = useRef<HTMLInputElement>(null);
 ```
 
 ## Advanced & Practical Hooks
