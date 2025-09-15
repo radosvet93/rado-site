@@ -9,7 +9,7 @@ type Props = {
 const { tags, withHref = false } = Astro.props;
 ---
 
-<div class="flex flex-wrap">
+<div class="flex flex-wrap justify-center gap-y-2">
 	{
 		tags.map((tag: string) => {
 			const element = <Tag tag={tag} />;
