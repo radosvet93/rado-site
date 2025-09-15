@@ -8,7 +8,7 @@ excerpt: 'I spent over 15 years as a professional hockey player before becoming 
 image:
   src: /src/pages/posts/career/_radosvet_petrov.jpg
   alt: 'Radosvet Petrov receiving a reward for being the best player at a national tournament'
-tags: ['career', 'mindset', 'engineering lessons', 'growth']
+tags: ['career', 'mindset', 'coding', 'engineering lessons', 'growth']
 ---
 
 > I was an ice hockey goalie, and on some days I'd spend seven hours training. At 14, I left home to live in a different country, chasing my dreams, trying to figure out how to become a better player. Every mistake was mine to learn from, and every improvement came from stubborn persistence, desire to become better and relentless practice.

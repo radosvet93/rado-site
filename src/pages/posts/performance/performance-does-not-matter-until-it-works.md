@@ -7,8 +7,8 @@ isPinned: false
 excerpt: 'Performance is only valuable once your code works, is correct, and is readable. Build in that order and only optimise where it matters.'
 image:
   src: /src/pages/posts/performance/_performance-does-not-matter-until-it-works.jpg
-  alt: 'A balance scale with clarity and performance in tension'
-tags: ['performance', 'best practices', 'craftsmanship', 'readability']
+  alt: 'Abstract image of yellow painting'
+tags: ['performance', 'best-practices', 'frontend', 'readability']
 ---
 
 > I've seen it happen a couple of times, someone (me including) spends hours micro-optimising some front end code, only to discover later that the feature didn't even meet the business requirements or a valid edge case was missing completely.

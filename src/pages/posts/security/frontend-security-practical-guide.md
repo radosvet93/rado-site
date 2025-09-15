@@ -7,8 +7,8 @@ isPinned: false
 excerpt: "Frontend developers are often the first line of defence against cyberattacks. Here's a practical guide to the most common threats and how to prevent them"
 image:
   src: '/src/pages/posts/security/_frontend-security-fortress.jpg'
-  alt: 'A fortress with a computer monitor at the gate, representing frontend security.'
-tags: ['security', 'best practices', 'career']
+  alt: 'A wooden door with a padlock.'
+tags: ['security', 'frontend', 'best-practices', 'career']
 ---
 
 ## The Hidden Traps of Frontend Security

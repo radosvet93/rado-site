@@ -8,14 +8,7 @@ excerpt: "Our CI pipelines required 100% coverage. Here's how it backfired and w
 image:
   src: /src/pages/posts/testing/_coverage-illusion.jpg
   alt: A white screen laptop and two hands typing on the laptop
-tags: ['testing', 'career', 'mentoring']
-# Outline:
-# Hook: Your early obsession with 100% coverage
-# Reality check: Bugs still leaked; tests were superficial
-# Turning point: A production bug that bypassed tests
-# Lesson: Coverage ≠ confidence
-# New mindset: Integration-first, test what users care about
-# Advice to juniors: Focus on behavioural coverage, not line counts
+tags: ['testing', 'career', 'mentoring', 'frontend']
 ---
 
 > You Can Have 100% Test Coverage and 0% Confidence
