@@ -44,6 +44,7 @@
 		"prettier-plugin-tailwindcss": "0.6.11",
 		"rehype-pretty-code": "0.14.1",
 		"sharp": "^0.34.3",
-		"typescript": "5.8.3"
+		"typescript": "5.8.3",
+		"zod": "^4.1.8"
 	}
 }
