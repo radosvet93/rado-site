@@ -6,13 +6,24 @@ import LatestPosts from '@/components/LatestPosts.astro';
 import { sortPostsByDate } from '@/utils/data.util';
 import { MarkdownInstance } from 'astro';
 import type { PostFrontmatter } from '@/types';
+import { validatePost } from '@/content/validate';
 
 const { title } = AppConfig;
 const { description } = AppConfig;
 
-const allPosts = Object.values(
-	import.meta.glob<MarkdownInstance<PostFrontmatter>>('./posts/**/*.md', { eager: true })
-);
+const rawPosts = import.meta.glob<MarkdownInstance<PostFrontmatter>>('./posts/**/*.{md,mdx}', {
+	eager: true
+});
+
+const allPosts = Object.entries(rawPosts).map(([id, mod]) => {
+	const safeFrontmatter = validatePost(mod.frontmatter, id);
+
+	return {
+		...mod,
+		frontmatter: safeFrontmatter
+	};
+});
+
 allPosts.sort(sortPostsByDate);
 const publishedPosts = allPosts.filter((post) => post.frontmatter.isPublished != false);
 const latestPosts = publishedPosts.slice(0, 6);
