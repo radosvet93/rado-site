@@ -15,7 +15,8 @@ export async function GET(context) {
 
 	return rss({
 		title: AppConfig.title,
-		description: AppConfig.description,
+		description:
+			'Insights from a Senior Frontend Engineer on React, TypeScript, testing, performance, accessibility, career and modern web development best practices.',
 		site: context.site,
 		items,
 		stylesheet: './rss/styles.xsl',
