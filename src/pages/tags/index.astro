@@ -3,15 +3,15 @@ import Heading from '@/components/Heading.astro';
 import Section from '@/components/Section.astro';
 import Tag from '@/components/Tag.astro';
 import Base from '@/layouts/Base.astro';
+import type { PostFrontmatter } from '@/types';
 import { AppConfig } from '@/utils/AppConfig';
 import { MarkdownInstance } from 'astro';
 
 const { title } = AppConfig;
-const { description } = AppConfig;
 
 const allPosts = Object.values(
 	import.meta.glob('../posts/**/*.md', { eager: true })
-) as MarkdownInstance<any>[];
+) as MarkdownInstance<PostFrontmatter>[];
 const publishedPosts = allPosts.filter((post) => post.frontmatter.isPublished != false);
 const allTags = publishedPosts.map((post) => post.frontmatter.tags).flat();
 const uniqueTags: Set<string> = new Set(allTags);
@@ -25,7 +25,13 @@ let tagMap: Record<string, number> = {};
 tagMap = Object.fromEntries(Object.entries(tagMap).sort((a, b) => b[1] - a[1]));
 ---
 
-<Base head={{ title: `Tags | ${title}`, description }}>
+<Base
+	head={{
+		title: `Tags | ${title}`,
+		description:
+			'Browse all blog posts by tag. Discover articles on frontend engineering, React, TypeScript, testing, performance, accessibility, and more'
+	}}
+>
 	<Section><Heading title="Posts by Tag" /></Section>
 	<div class="mx-auto grid w-full max-w-screen-md grid-cols-1 gap-x-6 px-4 md:grid-cols-2 md:px-0">
 		{

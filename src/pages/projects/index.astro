@@ -7,10 +7,15 @@ import { Image } from 'astro:assets';
 import { projects } from './constants';
 
 const { title } = AppConfig;
-const { description } = AppConfig;
 ---
 
-<Base head={{ title: `Projects | ${title}`, description }}>
+<Base
+	head={{
+		title: `Projects | ${title}`,
+		description:
+			'Browse a collection of frontend engineering projects showcasing React, TypeScript and testing expertise, with a focus on accessibility, performance and design'
+	}}
+>
 	<Section><Heading title="Projects" /></Section>
 	<Section>
 		<div class="grid grid-cols-2 gap-4 lg:grid-cols-3">

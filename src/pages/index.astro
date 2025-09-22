@@ -15,14 +15,10 @@ const rawPosts = import.meta.glob<MarkdownInstance<PostFrontmatter>>('./posts/**
 	eager: true
 });
 
-const allPosts = Object.entries(rawPosts).map(([id, mod]) => {
-	const safeFrontmatter = validatePost(mod.frontmatter, id);
-
-	return {
-		...mod,
-		frontmatter: safeFrontmatter
-	};
-});
+const allPosts = Object.entries(rawPosts).map(([id, mod]) => ({
+	...mod,
+	frontmatter: validatePost(mod.frontmatter, id)
+})) as MarkdownInstance<PostFrontmatter>[];
 
 allPosts.sort(sortPostsByDate);
 const publishedPosts = allPosts.filter((post) => post.frontmatter.isPublished != false);

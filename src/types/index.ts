@@ -3,6 +3,7 @@ export type PostFrontmatter = {
 	isPinned?: boolean;
 	pubDate: string;
 	minutesRead: string;
+	description: string;
 	excerpt: string;
 	isPublished?: boolean;
 	image: {

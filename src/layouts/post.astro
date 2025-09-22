@@ -6,8 +6,6 @@ import PostContent from '@/components/PostContent.astro';
 import Newsletter from '@/components/Newsletter.astro';
 import type { PostFrontmatter } from '@/types';
 
-const { description } = AppConfig;
-
 type Props = {
 	frontmatter: PostFrontmatter;
 };
@@ -15,7 +13,12 @@ type Props = {
 const { frontmatter } = Astro.props;
 ---
 
-<Base head={{ title: `${frontmatter.title} | ${AppConfig.title}`, description }}>
+<Base
+	head={{
+		title: `${frontmatter.title} | ${AppConfig.title}`,
+		description: frontmatter.description
+	}}
+>
 	<div class="mx-auto w-full max-w-screen-md">
 		<PostHeader
 			title={frontmatter.title}

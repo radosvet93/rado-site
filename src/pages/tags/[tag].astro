@@ -18,7 +18,7 @@ type Props = {
 export async function getStaticPaths(): Promise<any> {
 	const allPosts = Object.values(
 		import.meta.glob('../posts/**/*.md', { eager: true })
-	) as MarkdownInstance<any>[];
+	) as MarkdownInstance<PostFrontmatter>[];
 
 	const allTags: Set<string> = new Set(
 		allPosts.map((post: MarkdownInstance<Record<string, any>>) => post.frontmatter.tags).flat()
@@ -43,10 +43,8 @@ export async function getStaticPaths(): Promise<any> {
 }
 
 const { tag } = Astro.params;
-const title = AppConfig.title;
-const description = AppConfig.description;
-
 const { posts } = Astro.props;
+const title = AppConfig.title;
 
 const publishedPosts = posts.filter(
 	(post: Props['posts'][0]) =>
@@ -54,7 +52,12 @@ const publishedPosts = posts.filter(
 );
 ---
 
-<Base head={{ title: `Tag: ${tag} | ${title}`, description }}>
+<Base
+	head={{
+		title: `Tag: ${tag} | ${title}`,
+		description: `Browse tag with specific "${tag}" blog posts. Discover blog post articles on "${tag}"`
+	}}
+>
 	<Section>
 		<Heading title={`Posts with #${tag}`} />
 		<div class="pt-2 text-center">

@@ -8,10 +8,15 @@ import { Image } from 'astro:assets';
 import radoImage from '../../images/rado.jpg';
 
 const { title } = AppConfig;
-const { description } = AppConfig;
 ---
 
-<Base head={{ title: `About me | ${title}`, description }}>
+<Base
+	head={{
+		title: `About me | ${title}`,
+		description:
+			'Senior Frontend Engineer with 9+ years experience in React, TypeScript & testing. Expert in CI/CD, performance, security & accessible web apps.'
+	}}
+>
 	<Section><Heading title="About me" /></Section>
 	<Section>
 		<div class="mx-auto w-full sm:px-8">

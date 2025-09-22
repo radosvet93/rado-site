@@ -4,11 +4,6 @@ import Section from './Section.astro';
 import Tags from './Tags.astro';
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
-import type { PostFrontmatter } from '@/types';
-
-type Props = PostFrontmatter & {
-	tags: string[];
-};
 
 const { title, pubDate, tags, minutesRead, image } = Astro.props;
 
