@@ -12,7 +12,10 @@ export const formatDate = (pubDate: string) => {
 	return new Date(pubDate).toLocaleDateString('en-GB', options);
 };
 
-export const sortPostsByDate = (a: MarkdownInstance<PostFrontmatter>, b: MarkdownInstance<PostFrontmatter>) => {
+export const sortPostsByDate = (
+	a: MarkdownInstance<PostFrontmatter>,
+	b: MarkdownInstance<PostFrontmatter>
+) => {
 	// First, check if either post is pinned
 	const isPinnedA = a.frontmatter.isPinned === true;
 	const isPinnedB = b.frontmatter.isPinned === true;
