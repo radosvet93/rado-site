@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://radosvet.dev/sitemap-index.xml
+Sitemap: https://www.radosvet.dev/sitemap-index.xml
