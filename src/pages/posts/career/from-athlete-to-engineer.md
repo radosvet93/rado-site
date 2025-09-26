@@ -11,7 +11,7 @@ image:
 tags: ['career', 'mindset', 'teamwork']
 relatedPosts:
   - /posts/career/managing-time-as-senior-engineer
-  - /posts/career/interviews-as-win-win-or-no-deal  
+  - /posts/career/interviews-as-win-win-or-no-deal
   - /posts/career/what-i-wish-i-knew-when-learning-frontend-practical-framework
 ---
 

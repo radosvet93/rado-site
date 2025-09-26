@@ -138,4 +138,3 @@ This approach is much more robust. When you need a new `TertiaryButton`, you sim
 ## Final Thoughts
 
 Abstraction is powerful, but only when used deliberately. Encourage discussion in your team before merging similar code. A few minutes of discussion can save you from a major refactoring headache down the road. Let patterns emerge naturally, and rely on experience to identify when a DRY abstraction is genuinely valuable. Focus on readability, maintainability, and testability - your future self (and your team) will thank you.
-

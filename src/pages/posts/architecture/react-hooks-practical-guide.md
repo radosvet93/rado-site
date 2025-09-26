@@ -10,7 +10,7 @@ image:
   alt: Illustration of interconnected nodes
 tags: ['react', 'react-hooks', 'frontend', 'typescript', 'best-practices', 'principles']
 relatedPosts:
-  -	/posts/career/what-i-wish-i-knew-when-learning-frontend-practical-framework
+  - /posts/career/what-i-wish-i-knew-when-learning-frontend-practical-framework
   - /posts/architecture/when-dry-goes-wrong
   - /posts/testing/testing-strategies-for-modern-react-apps
 ---
