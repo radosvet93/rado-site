@@ -9,6 +9,10 @@ tags: ['frontend', 'career', 'principles', 'mindset']
 image:
   src: /src/pages/posts/career/_what-i-wish-i-knew-when-learning-frontend.jpg
   alt: 'Abstract illustration of building blocks representing incremental learning'
+relatedPosts:
+  - /posts/tooling/the-one-tool-you-cant-afford-to-skip
+  - /posts/performance/performance-does-not-matter-until-it-works
+  - /posts/architecture/react-hooks-practical-guide
 ---
 
 > Are you feeling lost learning frontend? It's normal. When I started, I didn't know where to begin, what to focus on, or how to measure progress. Tutorials, blog posts, software languages, tools, frameworks, felt like a never-ending forest of concepts, and I slept very little trying to navigate it all.

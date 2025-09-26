@@ -1,34 +1,28 @@
 ---
-import { sortPostsByDate } from '@/utils/data.util';
-import { MarkdownInstance } from 'astro';
+import RelatedPostCard from './RelatedPostCard.astro';
 import type { PostFrontmatter } from '@/types';
 
-const allPosts = Object.values(
-	import.meta.glob<MarkdownInstance<PostFrontmatter>>('./posts/**/*.{md,mdx}', { eager: true })
-);
-const publishedPosts = allPosts.filter((post) => post.frontmatter.isPublished != false);
-publishedPosts.sort(sortPostsByDate);
-const latestPosts = publishedPosts.slice(0, 6);
+type Props = {
+	posts: {
+		url: string;
+		frontmatter: PostFrontmatter;
+	}[];
+};
+
+const { posts } = Astro.props;
 ---
 
 {
-	latestPosts.length > 0 && (
+	posts.length > 0 && (
 		<section class="mt-12">
-			<h2 class="mb-4 text-xl font-bold">Related Posts</h2>
-			<ul class="space-y-4">
-				{latestPosts.map((post) => (
-					<li>
-						<a href={post.url} class="font-medium text-blue-600 hover:underline">
-							{post.frontmatter.title}
-						</a>
-						<span class="ml-2 text-sm text-gray-500">
-							{post.frontmatter.pubDate
-								? new Date(post.frontmatter.pubDate).toLocaleDateString()
-								: ''}
-						</span>
-					</li>
+			<h2 class="mb-6 text-2xl font-bold text-orange-800 dark:text-amber-300">
+				You might also like
+			</h2>
+			<div class="grid gap-6 md:grid-cols-3">
+				{posts.map((post) => (
+					<RelatedPostCard post={post} />
 				))}
-			</ul>
+			</div>
 		</section>
 	)
 }

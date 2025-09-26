@@ -9,6 +9,10 @@ image:
   src: /src/pages/posts/performance/_performance-does-not-matter-until-it-works.jpg
   alt: 'Abstract image of yellow painting'
 tags: ['performance', 'best-practices', 'frontend', 'mindset']
+relatedPosts:
+  - /posts/tooling/the-one-tool-you-cant-afford-to-skip
+  - /posts/architecture/when-dry-goes-wrong
+  - /posts/career/managing-time-as-senior-engineer
 ---
 
 > I've seen it happen a couple of times, someone (me including) spends hours micro-optimising some front end code, only to discover later that the feature didn't even meet the business requirements or a valid edge case was missing completely.

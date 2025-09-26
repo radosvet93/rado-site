@@ -4,10 +4,14 @@ title: 'Testing Strategies for Modern React Apps: Unit, Integration, and Visual 
 pubDate: 2025-04-22
 description: 'A beginner-friendly guide to testing React apps using React Testing Library, Playwright, focusing on maintainable and reliable tests.'
 tags: ['react', 'testing', 'visual-regression', 'frontend', 'code-quality']
+excerpt: "Testing React apps doesn't have to be scary. Learn the basics of unit, integration, and visual regression testing with popular tools."
 image:
   src: '/src/pages/posts/testing/_testing-strategies-react.jpg'
   alt: Abstract image of an orange painting, describing the modern element in the strategies for modern react apps
-excerpt: "Testing React apps doesn't have to be scary. Learn the basics of unit, integration, and visual regression testing with popular tools."
+relatedPosts:
+  - /posts/testing/how-to-actually-test-your-frontend-code
+  - /posts/testing/why-stopped-obsessing-over-100-percent-unit-test-coverage
+  - /posts/architecture/react-hooks-practical-guide
 ---
 
 ## The fastest way to waste testing effort? Spending most of your time in the wrong place.

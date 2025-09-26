@@ -9,6 +9,10 @@ image:
   src: /src/pages/posts/tooling/_the-one-tool-you-cant-afford-to-skip.jpg
   alt: 'A brick wall, symbolising the strong foundation with a tool like ESLint'
 tags: ['tooling', 'mentoring', 'best-practices', 'code-quality']
+relatedPosts:
+  - /posts/tooling/the-one-tool-you-cant-afford-to-skip
+  - /posts/security/frontend-security-practical-guide
+  - /posts/performance/performance-does-not-matter-until-it-works
 ---
 
 ## The One Tool You Can't Afford to Skip (Hint: It's Not a Framework)

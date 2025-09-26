@@ -9,6 +9,10 @@ image:
   src: /src/pages/posts/testing/_sticky-notes.jpg
   alt: A messy table full with sticky notes and pens
 tags: ['testing', 'frontend', 'career', 'mindset', 'code-quality']
+relatedPosts:
+  - /posts/testing/testing-strategies-for-modern-react-apps
+  - /posts/testing/why-stopped-obsessing-over-100-percent-unit-test-coverage
+  - /posts/security/frontend-security-practical-guide
 ---
 
 ## Why Are Tests So Hard?

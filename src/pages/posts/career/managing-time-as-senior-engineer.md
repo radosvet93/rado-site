@@ -9,6 +9,10 @@ image:
   src: /src/pages/posts/career/_managing-time-as-a-senior-engineer.png
   alt: 'A person balancing on a thin rope.'
 tags: ['career', 'engineering', 'time-management', 'mindset']
+relatedPosts:
+  - /posts/career/from-athlete-to-engineer
+  - /posts/career/interviews-as-win-win-or-no-deal
+  - /posts/testing/why-stopped-obsessing-over-100-percent-unit-test-coverage
 ---
 
 > As a senior engineer, time management is not just about getting through your own to-do list. It's about balancing individual contributions, mentoring others, supporting your team, and still protecting space for the deep, high-leverage work that really moves the organisation forward.

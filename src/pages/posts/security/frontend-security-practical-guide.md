@@ -9,6 +9,10 @@ image:
   src: '/src/pages/posts/security/_frontend-security-fortress.jpg'
   alt: 'A wooden door with a padlock.'
 tags: ['security', 'frontend', 'best-practices', 'career']
+relatedPosts:
+  - /posts/tooling/the-one-tool-you-cant-afford-to-skip
+  - /posts/testing/testing-strategies-for-modern-react-apps
+  - /posts/performance/performance-does-not-matter-until-it-works
 ---
 
 ## The Hidden Traps of Frontend Security

@@ -9,6 +9,10 @@ image:
   src: /src/pages/posts/career/_radosvet_petrov.jpg
   alt: 'Radosvet Petrov receiving a reward for being the best player at a national tournament'
 tags: ['career', 'mindset', 'teamwork']
+relatedPosts:
+  - /posts/career/managing-time-as-senior-engineer
+  - /posts/career/interviews-as-win-win-or-no-deal  
+  - /posts/career/what-i-wish-i-knew-when-learning-frontend-practical-framework
 ---
 
 > I was an ice hockey goalie, and on some days I'd spend seven hours training. At 14, I left home to live in a different country, chasing my dreams, trying to figure out how to become a better player. Every mistake was mine to learn from, and every improvement came from stubborn persistence, desire to become better and relentless practice.
@@ -27,7 +31,7 @@ My simple advice is to treat your career like training, show up consistently, pr
 
 As a goalie, I trained for hours every day. Much of it wasn't glamorous, repetitive drills, conditioning, endless footwork. But showing up consistently, even on days when I didn't feel like it, was non-negotiable. That discipline made me a reliable player.
 
-In software, the same principle applies. Doing refactoring, maintaining documentation, writing tests, none of it is flashy, but it's what makes projects sustainable. A codebase doesn't stay clean because of bursts of motivation. It stays clean because of consistency.
+In software, the same principle applies. Doing refactoring, maintaining documentation, [writing tests](../testing/how-to-actually-test-your-frontend-code), none of it is flashy, but it's what makes projects sustainable. A codebase doesn't stay clean because of bursts of motivation. It stays clean because of consistency.
 
 ## The Power of Teamwork
 

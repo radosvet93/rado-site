@@ -9,6 +9,10 @@ image:
   src: '/src/pages/posts/architecture/_when-dry-goes-wrong.jpg'
   alt: Illustration of old car left in the desert
 tags: ['frontend', 'typescript', 'best-practices', 'principles']
+relatedPosts:
+  - /posts/architecture/react-hooks-practical-guide
+  - /posts/performance/performance-does-not-matter-until-it-works
+  - /posts/testing/how-to-actually-test-your-frontend-code
 ---
 
 > As developers, we're taught early on to never repeat ourselves, it's better to change code in one place, more predictable, easy to test and will lead to less bugs as we know where the code is and it's just that one place. The DRY principle is a cornerstone of good engineering, but what happens when following it too strictly leads to a codebase that's harder to maintain and understand? The instinct to abstract is strong, but sometimes, a little repetition is the smarter choice.
@@ -134,3 +138,4 @@ This approach is much more robust. When you need a new `TertiaryButton`, you sim
 ## Final Thoughts
 
 Abstraction is powerful, but only when used deliberately. Encourage discussion in your team before merging similar code. A few minutes of discussion can save you from a major refactoring headache down the road. Let patterns emerge naturally, and rely on experience to identify when a DRY abstraction is genuinely valuable. Focus on readability, maintainability, and testability - your future self (and your team) will thank you.
+

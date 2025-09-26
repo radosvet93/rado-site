@@ -1,0 +1,46 @@
+---
+import { formatDate } from '@/utils/data.util';
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import type { PostFrontmatter } from '@/types';
+
+type Props = {
+	post: {
+		url: string;
+		frontmatter: PostFrontmatter;
+	};
+};
+
+const { post } = Astro.props as Props;
+const img = post.frontmatter.image;
+
+const postImageGlob = import.meta.glob<{ default: ImageMetadata }>(
+	'/src/pages/posts/**/*.{jpeg,jpg,png,gif}'
+);
+const postImage = postImageGlob[img.src];
+
+if (!postImage)
+	throw new Error(`"${img.src}" does not exist in glob: "src/pages/posts/**/*.{jpeg,jpg,png,gif}"`);
+---
+
+<a href={post.url} class="block h-full">
+	<div class="h-full rounded-2xl bg-red-200 p-1 text-sm dark:bg-gray-300">
+		<div
+			class="flex h-full flex-col rounded-2xl bg-white p-4 text-gray-900 opacity-90 dark:bg-gray-900 dark:text-white"
+		>
+			<div class="flex justify-between pb-2 text-xs">
+				<strong>
+					{post.frontmatter.minutesRead}
+				</strong>
+				<p>{formatDate(post.frontmatter.pubDate)}</p>
+			</div>
+
+			<Image src={postImage()} alt={img.alt} width={700} height={350} />
+
+			<p class="pt-2 pb-2 text-lg font-bold dark:text-amber-300">
+				{post.frontmatter.title}
+			</p>
+			<p class="line-clamp-3">{post.frontmatter.excerpt}</p>
+		</div>
+	</div>
+</a>

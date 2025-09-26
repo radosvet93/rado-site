@@ -9,6 +9,10 @@ image:
   src: /src/pages/posts/testing/_coverage-illusion.jpg
   alt: A white screen laptop and two hands typing on the laptop
 tags: ['testing', 'career', 'mentoring', 'frontend', 'code-quality']
+relatedPosts:
+  - /posts/testing/how-to-actually-test-your-frontend-code
+  - /posts/testing/testing-strategies-for-modern-react-apps
+  - /posts/career/managing-time-as-senior-engineer
 ---
 
 > You Can Have 100% Test Coverage and 0% Confidence

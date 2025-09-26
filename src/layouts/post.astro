@@ -4,13 +4,37 @@ import Base from '@/layouts/Base.astro';
 import PostHeader from '@/components/PostHeader.astro';
 import PostContent from '@/components/PostContent.astro';
 import Newsletter from '@/components/Newsletter.astro';
+import RelatedPosts from '@/components/RelatedPosts.astro';
 import type { PostFrontmatter } from '@/types';
+import type { MarkdownInstance } from 'astro';
+import { validatePost } from '@/content/validate';
+import { sortPostsByDate } from '@/utils/data.util';
+import Section from '@/components/Section.astro';
 
 type Props = {
 	frontmatter: PostFrontmatter;
 };
 
 const { frontmatter } = Astro.props;
+
+const rawPosts = import.meta.glob<MarkdownInstance<PostFrontmatter>>(
+	'/src/pages/posts/**/*.{md,mdx}',
+	{ eager: true }
+);
+
+const allPosts = Object.entries(rawPosts).map(([id, mod]) => ({
+	...mod,
+	frontmatter: validatePost(mod.frontmatter, id)
+})) as MarkdownInstance<PostFrontmatter>[];
+
+allPosts.sort(sortPostsByDate);
+
+const relatedPosts = (frontmatter.relatedPosts ?? [])
+	.map((slug) => allPosts.find((post) => post?.url?.includes(slug)))
+	.map((post) => ({
+		url: post?.url!,
+		frontmatter: post?.frontmatter!
+	}));
 ---
 
 <Base
@@ -20,19 +44,16 @@ const { frontmatter } = Astro.props;
 	}}
 >
 	<div class="mx-auto w-full max-w-screen-md">
-		<PostHeader
-			title={frontmatter.title}
-			tags={frontmatter.tags}
-			minutesRead={frontmatter.minutesRead}
-			pubDate={frontmatter.pubDate}
-			isPinned={frontmatter.isPinned}
-			excerpt={frontmatter.excerpt}
-			image={{ src: frontmatter.image.src, alt: frontmatter.image.alt }}
-		/>
+		<PostHeader {...frontmatter} />
+
 		<PostContent>
 			<slot />
 		</PostContent>
-
-		<Newsletter />
 	</div>
+
+	<Section>
+		{relatedPosts.length > 0 && <RelatedPosts posts={relatedPosts} />}
+	</Section>
+
+	<Newsletter />
 </Base>

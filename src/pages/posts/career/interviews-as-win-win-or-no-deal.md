@@ -9,6 +9,10 @@ image:
   src: '/src/pages/posts/career/_interview-as-win-win-or-no-deal.jpg'
   alt: 'Handshake symbolising win/win agreement'
 tags: ['career', 'interviews', 'mindset', 'engineering']
+relatedPosts:
+  - /posts/career/from-athlete-to-engineer
+  - /posts/career/managing-time-as-senior-engineer
+  - /posts/testing/why-stopped-obsessing-over-100-percent-unit-test-coverage
 ---
 
 > We live in a world that sees most things through a win/lose lens. If you don't "win" the interview, then you must have lost. That's the common belief.

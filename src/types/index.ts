@@ -11,4 +11,5 @@ export type PostFrontmatter = {
 		alt: string;
 	};
 	tags: string[];
+	relatedPosts?: string[];
 };

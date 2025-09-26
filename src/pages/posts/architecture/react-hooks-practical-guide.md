@@ -9,6 +9,10 @@ image:
   src: '/src/pages/posts/architecture/_react-hooks-practical-guide.jpg'
   alt: Illustration of interconnected nodes
 tags: ['react', 'react-hooks', 'frontend', 'typescript', 'best-practices', 'principles']
+relatedPosts:
+  -	/posts/career/what-i-wish-i-knew-when-learning-frontend-practical-framework
+  - /posts/architecture/when-dry-goes-wrong
+  - /posts/testing/testing-strategies-for-modern-react-apps
 ---
 
 > If you've ever tried to manage state, lifecycle, or side effects in a React application, you've likely touched **React Hooks**. They were introduced to simplify our code, making it more readable, reusable and testable. But while they solve a lot of problems, they also open the door to subtle bugs and patterns that don't scale well if misunderstood.
