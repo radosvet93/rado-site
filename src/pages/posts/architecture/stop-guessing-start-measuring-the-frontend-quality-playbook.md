@@ -1,14 +1,14 @@
 ---
 layout: ../../../layouts/post.astro
-title: "Stop Guessing. Start Measuring. The Frontend Quality Playbook."
+title: 'Stop Guessing. Start Measuring. The Frontend Quality Playbook.'
 pubDate: 2025-09-15
-description: "A practical guide to building maintainable, measurable, high-quality frontend systems - inspired by timeless software engineering principles and reimagined for modern teams."
+description: 'A practical guide to building maintainable, measurable, high-quality frontend systems - inspired by timeless software engineering principles and reimagined for modern teams.'
 isPinned: false
-excerpt: "How to build frontend systems that scale sustainably: measure what matters, prevent instead of patch, design for the long term, and base decisions on evidence - not assumptions."
+excerpt: 'How to build frontend systems that scale sustainably: measure what matters, prevent instead of patch, design for the long term, and base decisions on evidence - not assumptions.'
 image:
   src: '/src/pages/posts/architecture/_stop-guessing-start-measuring-the-frontend-quality-playbook.jpg'
-  alt: "Frontend dashboards, code and graphs representing quality metrics"
-tags: ["frontend", "code-quality", "engineering", "principles", "mentoring"]
+  alt: 'Frontend dashboards, code and graphs representing quality metrics'
+tags: ['frontend', 'code-quality', 'engineering', 'principles', 'mentoring']
 relatedPosts:
   - /posts/architecture/react-hooks-practical-guide
   - /posts/architecture/when-dry-goes-wrong
@@ -23,10 +23,11 @@ relatedPosts:
 
 The truth? Without measurement, these are just stories we tell ourselves.
 
-A few months ago, I rediscovered the work of **Capers Jones**, a pioneer in software metrics and quality. His research showed that successful engineering teams don't guess - *they measure, prevent, design, and experiment.*
+A few months ago, I rediscovered the work of **Capers Jones**, a pioneer in software metrics and quality. His research showed that successful engineering teams don't guess - _they measure, prevent, design, and experiment._
 This post reimagines those timeless ideas for today's frontend world - where we move fast, but must still build things that last.
 
 ## TL;DR:
+
 Be data-driven, prevention-focused, future-minded, and evidence-based. That's how great frontend teams build software that lasts.
 
 ## 1. Measure What Matters
@@ -35,7 +36,7 @@ Be data-driven, prevention-focused, future-minded, and evidence-based. That's ho
 
 – Capers Jones
 
-Frontend teams often celebrate shipping speed but rarely quantify it. 
+Frontend teams often celebrate shipping speed but rarely quantify it.
 
 Jones' decades of research proved that the best-performing teams track predictive metrics - not vanity numbers like commit count or story points, but ones that reveal delivery health and system quality.
 
@@ -62,7 +63,7 @@ Metrics are not for management; they're for craftsmanship. They help engineers s
 
 ## 2. Prevent, Don't Just Detect
 
-Fixing a bug after release can cost up to *100x* more than preventing it. Jones proved this long before CI existed - and the principle holds stronger than ever in frontend.
+Fixing a bug after release can cost up to _100x_ more than preventing it. Jones proved this long before CI existed - and the principle holds stronger than ever in frontend.
 
 ### Shift Testing Left
 
@@ -107,8 +108,8 @@ Jones' philosophy was the opposite - treat every change as an experiment, collec
 
 Before adopting a tool or process, ask:
 
-1. What *outcome* do we expect?
-2. How will we *measure success*?
+1. What _outcome_ do we expect?
+2. How will we _measure success_?
 3. How small can we start?
 
 Run a trial in one service for a few sprints. Measure before and after. Decide based on evidence, not hype.
@@ -146,8 +147,6 @@ Pragmatism is seniority. Measure before adopting. Prove before scaling.
 | **Design for the Long Term**   | Maintenance dominates cost | Modular architecture, clarity, docs    |
 | **Be Evidence-Based**          | Avoid hype & waste         | Run experiments, decide with data      |
 
-		
-		
 ## Final Thoughts
 
 Frontend engineering today demands the same rigour as any mature discipline. The lessons are old but evergreen:
@@ -157,7 +156,7 @@ Frontend engineering today demands the same rigour as any mature discipline. The
 - Design for maintainability.
 - Base change on data, not instinct.
 
-That's the philosophy Capers Jones championed - and it still defines what separates *teams that ship quickly from teams that sustain excellence.*
+That's the philosophy Capers Jones championed - and it still defines what separates _teams that ship quickly from teams that sustain excellence._
 
 Quality isn't expensive.
 
