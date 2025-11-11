@@ -1,5 +1,7 @@
 ---
 import ADPListIcon from './ADPListIcon.astro';
+import codementorImg from '../images/find-me-on-cm-b.svg';
+import { Image } from 'astro:assets';
 ---
 
 <div>
@@ -7,9 +9,13 @@ import ADPListIcon from './ADPListIcon.astro';
 	<ul class="flex flex-row items-center justify-center gap-3">
 		<li>
 			<a href="https://www.codementor.io/@radosvetpetrov?refer=badge" target="_blank">
-				<img
-					src="https://www.codementor.io/m-badges/radosvetpetrov/find-me-on-cm-b.svg"
+				<Image
+					loading="eager"
+					width={137}
+					height={51}
+					src={codementorImg}
 					alt="Codementor badge"
+					fetchpriority="high"
 				/>
 			</a>
 		</li>
