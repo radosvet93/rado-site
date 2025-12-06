@@ -17,5 +17,5 @@ export type PostFrontmatter = {
 		photographer: string;
 		photo: string;
 		media: string;
-	}
+	};
 };

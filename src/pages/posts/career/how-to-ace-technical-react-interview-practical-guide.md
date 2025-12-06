@@ -14,11 +14,10 @@ relatedPosts:
   - /posts/career/interviews-as-win-win-or-no-deal
   - /posts/architecture/when-dry-goes-wrong
 accreditation:
-   handle: https://unsplash.com/@dkomow?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText
-   photographer: Daniil Komov
-   photo: https://unsplash.com/photos/laptop-with-code-phone-glasses-and-plush-toy-rJkC2VsjKjQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText
-   media: Unsplash
-   
+  handle: https://unsplash.com/@dkomow?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText
+  photographer: Daniil Komov
+  photo: https://unsplash.com/photos/laptop-with-code-phone-glasses-and-plush-toy-rJkC2VsjKjQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText
+  media: Unsplash
 ---
 
 > This post is written for engineers preparing for technical React interviews. It focuses on practical routines, mental models and the skills interviewers actually look for, not just "what LeetCode to solve." Test locally, pick what works for you, and iterate.
