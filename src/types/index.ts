@@ -12,4 +12,10 @@ export type PostFrontmatter = {
 	};
 	tags: string[];
 	relatedPosts: string[];
+	accreditation?: {
+		handle: string;
+		photographer: string;
+		photo: string;
+		media: string;
+	}
 };

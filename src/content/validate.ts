@@ -34,7 +34,13 @@ const postSchema = z.object({
 		src: z.string(),
 		alt: z.string()
 	}),
-	tags: z.array(z.enum(allowedTags))
+	tags: z.array(z.enum(allowedTags)),
+	accreditation: z.object({
+		handle: z.string(),
+		photographer: z.string(),
+		photo: z.string(),
+		media: z.string(),
+	}).optional()
 });
 
 export function validatePost(post: PostFrontmatter, id: string) {
