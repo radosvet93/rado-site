@@ -1,7 +1,6 @@
 import mellsnapMarketing from '../mellsnap-marketing.png';
 import mellsnapGalleries from '../mellsnap-galleries.png';
 import trendscribberImage from '../trendscribber.png';
-import middlemistImage from '../middlemist.png';
 import casaMartinaImage from '../casamartina.png';
 import a11yAssistantImage from '../a11y-assistant.png';
 
@@ -42,18 +41,6 @@ export const projects = [
 		},
 		tech: 'Next.JS | AI',
 		industry: 'Marketing'
-	},
-	{
-		url: 'https://middlemist.co.uk/',
-		title: 'MiddleMist',
-		description:
-			'Developed a Shopify-based online flower delivery store, implementing plugins, analytics, and a manageable e-commerce setup for the florist',
-		image: {
-			src: middlemistImage,
-			alt: 'Image of the middlemist shopify site'
-		},
-		tech: 'Shopify',
-		industry: 'Flowers'
 	},
 	{
 		url: 'https://casamartinatuscany.com/',
