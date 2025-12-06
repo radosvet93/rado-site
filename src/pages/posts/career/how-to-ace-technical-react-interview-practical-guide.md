@@ -8,7 +8,7 @@ description: 'A practical, mentor-led guide to preparing for technical React int
 tags: ['react', 'interviews', 'frontend', 'career', 'mentoring']
 image:
   src: /src/pages/posts/career/_how-to-ace-technical-react-interview-practical-guide.jpg
-  alt: 'something'
+  alt: 'A laptop, a phone and a piece of paper, preparing for a technical interview'
 relatedPosts:
   - /posts/career/what-i-wish-i-knew-when-learning-frontend-practical-framework
   - /posts/career/interviews-as-win-win-or-no-deal
