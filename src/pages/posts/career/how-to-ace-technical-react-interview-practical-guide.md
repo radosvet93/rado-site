@@ -1,10 +1,10 @@
 ---
 layout: ../../../layouts/post.astro
-title: "How to Ace a Technical React Interview | Practical Guide"
+title: 'How to Ace a Technical React Interview | Practical Guide'
 pubDate: 2025-10-02
 isPinned: false
-excerpt: "A practical guide to prepare for technical React interviews: mental models, what to practise, how to communicate, and a checklist to bring on the day."
-description: "A practical, mentor-led guide to preparing for technical React interviews: mental models, what to practise, how to communicate, and a checklist to bring on the day."
+excerpt: 'A practical guide to prepare for technical React interviews: mental models, what to practise, how to communicate, and a checklist to bring on the day.'
+description: 'A practical, mentor-led guide to preparing for technical React interviews: mental models, what to practise, how to communicate, and a checklist to bring on the day.'
 tags: ['react', 'interviews', 'frontend', 'career', 'mentoring']
 image:
   src: /src/pages/posts/career/_how-to-ace-technical-react-interview-practical-guide.jpg
@@ -30,15 +30,18 @@ relatedPosts:
 Break the interview into clear phases and follow them deliberately:
 
 1. **Alignment (0-3 minutes)**
+
    - Don't go straight into writing code. Ask clarifying questions and repeat the requirements back.
    - Write assumptions and acceptance criteria as comments or quick notes.
    - Confirm constraints (timebox, libraries allowed, edge cases worth handling, accessibility needs).
 
 2. **High‑level plan (2-5 minutes)**
+
    - Sketch the approach out loud: components, state shape, data flow and important edge cases.
    - Call out the hardest part first and how you'll approach it.
 
 3. **Implementation (remainder of time)**
+
    - Implement in small increments: write, test, narrate.
    - Pause frequently: "Quick smoke test - does this render?" Ask the interviewer if they'd like a different focus.
 
@@ -53,6 +56,7 @@ Always keep the user in mind - will the user see a loader, an error, or a helpfu
 LeetCode is great resource, but on the frontend the web basics are essential and often times even more important, so don't skip knowing the DOM, HTML/CSS, JS, TS, Web APIs, how to consume an API endpoint, etc.
 
 Focus areas:
+
 - **DOM & browser fundamentals**: event propagation, reflows vs repaints, how layout/CSS affects paint.
 - **HTML & CSS**: semantic HTML, accessibility roles, responsive layouts, CSS architecture (atomic css, BEM, etc...) and sensible class naming.
 - **React fundamentals**: hooks (rules, lifecycles), reconciliation, keys, controlled vs uncontrolled inputs, context trade‑offs.
@@ -100,7 +104,7 @@ How to prepare:
 - Know a practical use case, limitations, and one example where you would not use it.
 - Prepare two small questions to ask the interviewer about how they use web technologies in their stack.
 
-**Bonus:** What is the company you are interviewing for doing? What is their main product, build a skinny version of that. 
+**Bonus:** What is the company you are interviewing for doing? What is their main product, build a skinny version of that.
 
 ## Soft skills matter (practice them)
 
@@ -109,7 +113,6 @@ Hiring rarely chooses the technical perfect candidate over someone with strong c
 - Start by asking the interviewer clarifying questions - it shows collaboration.
 - When you make an assumption, say it out loud and offer alternatives.
 - Use small personal touches: a hobby or a quick one‑line human connection can make you memorable.
-
 
 ## Questions to ask the interviewer (examples)
 
@@ -127,7 +130,7 @@ Hiring rarely chooses the technical perfect candidate over someone with strong c
 - ✅ One modern topic you can discuss for 5 minutes
 - ✅ Practice a 30‑minute build and narration
 - ✅ Prepare a list of questions for the interviewer
-- ✅ Sleep and hydrate - clear your mind the day before the interview, don't do much coding and don't overthink it 
+- ✅ Sleep and hydrate - clear your mind the day before the interview, don't do much coding and don't overthink it
 
 **During interview**
 
@@ -147,7 +150,7 @@ Hiring rarely chooses the technical perfect candidate over someone with strong c
 ## Resources & practice sites
 
 - Timed practice problems (pick React‑specific or UI algorithm problems [Frontend Ark](https://frontendark.com/problems?page=1&category=react))
-- Build small demos for modern APIs - explore [Figma Community](https://www.figma.com/community) for ideas 
+- Build small demos for modern APIs - explore [Figma Community](https://www.figma.com/community) for ideas
 - Mock interviews with peers or mentors - [Mock interview with me](https://adplist.org/mentors/radosvet-petrov?session=conquering-job-interviews-d816-mfbkgml9)
 
 ## Final notes - a short routine to try
