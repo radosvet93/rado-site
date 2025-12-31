@@ -20,42 +20,42 @@ These styles are for code highlighting that can't be easily implemented with jus
 		@apply p-0;
 	}
 
-	.content pre>code span[data-line] {
+	.content pre > code span[data-line] {
 		@apply border-l-8 border-transparent px-2;
 	}
 
-	.content pre>code span:first-of-type {
+	.content pre > code span:first-of-type {
 		@apply rounded-t-lg pt-2;
 	}
 
-	.content pre>code span:last-of-type {
+	.content pre > code span:last-of-type {
 		@apply rounded-b-lg pb-2;
 	}
 
-	.content pre>code .highlighted {
+	.content pre > code .highlighted {
 		@apply border-l-8 !border-gray-300/60 bg-gray-200/5;
 	}
 
-	.content pre>code[data-line-numbers] {
+	.content pre > code[data-line-numbers] {
 		counter-reset: line;
 	}
 
-	.content pre>code[data-line-numbers]>span[data-line]::before {
+	.content pre > code[data-line-numbers] > span[data-line]::before {
 		counter-increment: line;
 		content: counter(line);
 		@apply mr-8 inline-block w-4 text-left text-[#7ca2dfad];
 	}
 
-	.content pre>code>span[data-line]::before {
+	.content pre > code > span[data-line]::before {
 		content: '';
 		@apply inline-block w-4 text-right;
 	}
 
-	.content pre>code[data-line-numbers-max-digits='2']>span[data-line]::before {
+	.content pre > code[data-line-numbers-max-digits='2'] > span[data-line]::before {
 		@apply w-0;
 	}
 
-	.content code[data-line-numbers-max-digits='3']>span[data-line]::before {
+	.content code[data-line-numbers-max-digits='3'] > span[data-line]::before {
 		@apply w-12;
 	}
 
@@ -80,7 +80,7 @@ These styles are for code highlighting that can't be easily implemented with jus
 	}
 
 	.content li {
-		@apply leading-5 mb-3;
+		@apply mb-3 leading-5;
 	}
 }
 
