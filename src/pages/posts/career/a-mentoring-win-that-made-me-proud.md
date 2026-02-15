@@ -26,11 +26,11 @@ Moments like this are incredibly rewarding, not because of the outcome itself, b
 
 When we started working together, the biggest opportunities weren't purely technical. They were already strong technically, and the focus was on preparation in a broader sense:
 
-* Positioning their experience clearly and confidently
-* Communicating their strengths in a way that matched the roles they wanted
-* Understanding how to structure interview conversations
-* Knowing what interviewers actually pay attention to
-* Practising a few technical exercises together to build confidence
+- Positioning their experience clearly and confidently
+- Communicating their strengths in a way that matched the roles they wanted
+- Understanding how to structure interview conversations
+- Knowing what interviewers actually pay attention to
+- Practising a few technical exercises together to build confidence
 
 A lot of candidates underestimate how much interviews reward clarity and composure. Technical ability matters, of course - but the ability to stay calm, think aloud, and approach problems methodically often makes the biggest difference. From my experience most interviewers are 90% there, those last 10% are that clarity, moments of calm that makes you hired.
 
