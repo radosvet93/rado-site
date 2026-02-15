@@ -1,25 +1,10 @@
 ---
 import ADPListIcon from './ADPListIcon.astro';
-import codementorImg from '../images/find-me-on-cm-b.svg';
-import { Image } from 'astro:assets';
 ---
 
 <div>
 	<h2 class="text-bold mb-3 pt-6 text-center text-xl sm:text-2xl">Book a mentoring session</h2>
 	<ul class="flex flex-row items-center justify-center gap-3">
-		<li>
-			<a href="https://www.codementor.io/@radosvetpetrov?refer=badge" target="_blank">
-				<Image
-					loading="eager"
-					width={137}
-					height={51}
-					src={codementorImg}
-					alt="Codementor badge"
-					fetchpriority="high"
-				/>
-			</a>
-		</li>
-		<li>or</li>
 		<li>
 			<a href="https://adplist.org/mentors/radosvet-petrov" target="_blank">
 				<ADPListIcon />
