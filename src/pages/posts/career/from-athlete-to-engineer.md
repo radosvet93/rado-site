@@ -3,7 +3,7 @@ layout: ../../../layouts/post.astro
 title: 'From Athlete to Engineer: Lessons I Carry Into Coding'
 pubDate: 2025-06-11
 description: 'How 15+ years as a professional hockey goalie shaped my mindset as a software engineer, from discipline and teamwork to resilience and long-term growth.'
-isPinned: true
+isPinned: false
 excerpt: 'I spent over 15 years as a professional hockey player before becoming a software engineer. The lessons I carried from the ice to the codebase continue to shape how I write code, work with teams, and grow my career.'
 image:
   src: /src/pages/posts/career/_radosvet_petrov.jpg
