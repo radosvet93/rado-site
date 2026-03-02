@@ -5,7 +5,6 @@ pubDate: 2026-03-03
 isPinned: false
 excerpt: 'How a random newsletter link led to my first open source contribution - and why the community behind npmx changed how I see open source.'
 description: 'A personal story about discovering npmx through a newsletter, contributing for the first time, and realising that open source is all about community.'
-isPublished: false
 tags: ['open-source', 'community', 'frontend', 'career']
 image:
   src: /src/pages/posts/career/_from-newsletter-to-open-source.jpg
