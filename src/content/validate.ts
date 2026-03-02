@@ -20,7 +20,9 @@ export const allowedTags = [
 	'mindset',
 	'engineering',
 	'time-management',
-	'interviews'
+	'interviews',
+	'open-source',
+	'community',
 ] as const;
 
 const postSchema = z.object({
