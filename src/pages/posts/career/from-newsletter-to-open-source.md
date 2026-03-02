@@ -27,9 +27,9 @@ accreditation:
 
 I found the project by accident.
 
-It was featured in one of the newsletters I regularly read. The headline caught my attention *"a fast, modern browser for the npm registry"*, it sounded interesting, so I clicked. https://npmx.dev/
+It was featured in one of the newsletters I regularly read. The headline caught my attention _"a fast, modern browser for the npm registry"_, it sounded interesting, so I clicked. https://npmx.dev/
 
-The interface was clean, fast, thoughtful. It felt very modern and with a very big emphasis on accessibility. I also saw a feature that I'd been wanting when writing ADRs for years. The compare functionality! https://npmx.dev/compare 
+The interface was clean, fast, thoughtful. It felt very modern and with a very big emphasis on accessibility. I also saw a feature that I'd been wanting when writing ADRs for years. The compare functionality! https://npmx.dev/compare
 
 I had such a struggle in the past to find a good way to compare similar packages. I had to open a couple of tabs, navigate around, find the the downloads, issues, pull requests, vulnerabilities and stars count. It was such a pain. So when I saw that npmx had this feature built in, I was immediately intrigued.
 
@@ -123,7 +123,7 @@ That's it.
 
 For me, that random newsletter link turned into my first contribution, multiple merged PRs, and a community I genuinely enjoy being part of.
 
-Now when reading my newsletters, I explore the projects and try to contribute if I can. It's becoming my new hobby. 
+Now when reading my newsletters, I explore the projects and try to contribute if I can. It's becoming my new hobby.
 
 Sometimes all it takes is clicking one link.
 
