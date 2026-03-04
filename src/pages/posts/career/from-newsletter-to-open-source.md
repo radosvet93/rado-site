@@ -8,7 +8,7 @@ description: 'A personal story about discovering npmx through a newsletter, cont
 tags: ['open-source', 'community', 'frontend', 'career']
 image:
   src: /src/pages/posts/career/_from-newsletter-to-open-source.jpg
-  alt: 'Laptop open at night with code on screen, symbolising late-night excitement'
+  alt: 'A man fishing, looking at the horizon'
 relatedPosts:
   - /posts/career/what-i-wish-i-knew-when-learning-frontend-practical-framework
   - /posts/career/a-mentoring-win-that-made-me-proud
@@ -30,7 +30,7 @@ It was featured in one of the newsletters I regularly read. The headline caught 
 
 The interface was clean, fast, thoughtful. It felt very modern and with a very big emphasis on accessibility. I also saw a feature that I'd been wanting when writing ADRs for years. The compare functionality! https://npmx.dev/compare
 
-I had such a struggle in the past to find a good way to compare similar packages. I had to open a couple of tabs, navigate around, find the the downloads, issues, pull requests, vulnerabilities and stars count. It was such a pain. So when I saw that npmx had this feature built in, I was immediately intrigued.
+I had such a struggle in the past to find a good way to compare similar packages. I had to open a couple of tabs, navigate around, find the downloads, issues, pull requests, vulnerabilities and stars count. It was such a pain. So when I saw that npmx had this feature built in, I was immediately intrigued.
 
 ## Curiosity turns into contribution
 

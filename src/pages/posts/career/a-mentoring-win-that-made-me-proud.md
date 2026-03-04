@@ -7,7 +7,7 @@ isPinned: true
 excerpt: "One of my mentees recently landed a role they had been aiming for, and I'm so happy for them. What made the difference wasn't grinding algorithms - it was positioning their experience correctly, understanding how to structure interviews, and building the confidence to stay calm under pressure."
 image:
   src: /src/pages/posts/career/_a-mentoring-win-that-made-me-proud.jpg
-  alt: 'Radosvet Petrov receiving a reward for being the best player at a national tournament'
+  alt: 'A woman standing infront of a lake, looking at the horizon, with raised hands'
 tags: ['career', 'mentoring', 'interviews']
 relatedPosts:
   - /posts/career/managing-time-as-senior-engineer

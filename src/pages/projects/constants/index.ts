@@ -12,7 +12,7 @@ export const projects = [
 			'Developed and manage the full online presence for a family photography business, covering website, marketing, content, and sales',
 		image: {
 			src: mellsnapMarketing,
-			alt: 'Image of the MellSnap marketing website'
+			alt: 'MellSnap marketing website'
 		},
 		tech: 'Wordpress',
 		industry: 'Photography'
@@ -25,7 +25,7 @@ export const projects = [
 
 		image: {
 			src: mellsnapGalleries,
-			alt: 'Image of mellsnap galleries project'
+			alt: 'Mellsnap galleries project'
 		},
 		tech: 'Next.JS | AWS',
 		industry: 'Photography'
@@ -37,7 +37,7 @@ export const projects = [
 			'Developed a SaaS platform providing AI-driven content suggestions to help users boost engagement and grow their Instagram profiles',
 		image: {
 			src: trendscribberImage,
-			alt: 'Image of the trendscribber project'
+			alt: 'trendscribber project'
 		},
 		tech: 'Next.JS | AI',
 		industry: 'Marketing'
@@ -49,7 +49,7 @@ export const projects = [
 			'Built an Astro-based website with gallery and analytics to establish the online presence of a holiday house in Tuscany',
 		image: {
 			src: casaMartinaImage,
-			alt: 'Image of the Casa martina tuscany marketing site'
+			alt: 'Casa martina tuscany marketing site'
 		},
 		tech: 'Astro',
 		industry: 'Tourism'
@@ -61,7 +61,7 @@ export const projects = [
 			"VS Code extension that helps you detect and fix accessibility issues. It integrates with the a accessibility library that I've also developed",
 		image: {
 			src: a11yAssistantImage,
-			alt: 'Image of the A11y assistant VS code extension'
+			alt: 'A11y assistant VS code extension'
 		},
 		tech: 'axe-core | CLI',
 		industry: 'VScode extension'
