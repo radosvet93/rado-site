@@ -31,7 +31,7 @@ const options = {
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://www.radosvet.dev',
+	site: 'https://radosvet.dev',
 	markdown: {
 		syntaxHighlight: false,
 		// Disable syntax built-in syntax hightlighting from astro
