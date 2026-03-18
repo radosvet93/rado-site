@@ -1,0 +1,81 @@
+---
+import Base from '@/layouts/Base.astro';
+import Section from '@/components/Section.astro';
+---
+
+<Base head={{ title: '404 – Page not found', description: 'This page does not exist.' }}>
+	<Section>
+		<div class="flex flex-col items-center justify-center py-16 text-center">
+			<!-- 404 heading -->
+			<h1
+				class="bg-linear-to-bl from-red-200 to-red-700 bg-clip-text pb-6 text-3xl font-bold underline decoration-red-400 underline-offset-4 sm:text-5xl"
+				style="-webkit-text-fill-color: transparent;"
+			>
+				404 – Page not found
+			</h1>
+			<!-- Terminal window -->
+			<div
+				class="mt-4 w-full max-w-lg overflow-hidden rounded-xl border border-stone-700 bg-stone-900 text-left shadow-2xl"
+			>
+				<div
+					class="flex items-center gap-2 border-b border-stone-700 bg-stone-800 px-4 py-3 text-white"
+				>
+					<div class="h-3 w-3 rounded-full bg-red-600"></div>
+					<div class="h-3 w-3 rounded-full bg-yellow-500"></div>
+					<div class="h-3 w-3 rounded-full bg-green-500"></div>
+					<span class="ml-2 font-mono text-xs text-stone-400">bash — rado@blog</span>
+				</div>
+				<!-- Body -->
+				<div id="terminal" class="p-5 font-mono text-sm leading-7"></div>
+			</div>
+
+			<a
+				href="/"
+				class="mt-8 rounded-md bg-pink-600 px-6 py-2 text-base font-medium text-white transition hover:bg-pink-700"
+			>
+				Go home
+			</a>
+		</div>
+	</Section>
+</Base>
+
+<script>
+	const terminal = document.getElementById('terminal');
+
+	const path = window.location.pathname;
+
+	const lines: { html: string; delay: number }[] = [
+		{
+			html: `<span class="text-green-400">rado@blog</span><span class="text-stone-500">:~$</span> <span class="text-stone-200">curl https://radosvet.dev${path}</span>`,
+			delay: 0
+		},
+		{
+			html: `<span class="text-red-400">&gt; Error 404: page not found</span>`,
+			delay: 1000
+		},
+		{
+			html: `<span class="text-stone-400">&gt; Searching for alternatives...</span>`,
+			delay: 1500
+		},
+		{
+			html: `<span class="text-yellow-400">&gt; No matches found.</span>`,
+			delay: 3500
+		},
+		{
+			html: `<span class="text-stone-400">&gt; Did you mean: <a href="/" class="text-pink-400 underline underline-offset-2 hover:text-pink-300">/home</a> or <a href="/posts" class="text-pink-400 underline underline-offset-2 hover:text-pink-300">/posts</a>?</span>`,
+			delay: 4000
+		},
+		{
+			html: `<span class="text-green-400">rado@blog</span><span class="text-stone-500">:~$</span> <span class="inline-block w-2 h-4 bg-stone-300 align-middle animate-pulse"></span>`,
+			delay: 4500
+		}
+	];
+
+	lines.forEach(({ html, delay }) => {
+		setTimeout(() => {
+			const p = document.createElement('p');
+			p.innerHTML = html;
+			terminal?.appendChild(p);
+		}, delay);
+	});
+</script>
