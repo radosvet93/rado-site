@@ -10,12 +10,23 @@ import type { MarkdownInstance } from 'astro';
 import { validatePost } from '@/content/validate';
 import { sortPostsByDate } from '@/utils/data.util';
 import Section from '@/components/Section.astro';
+import type { ImageMetadata } from 'astro';
 
 type Props = {
 	frontmatter: PostFrontmatter;
 };
 
 const { frontmatter } = Astro.props;
+const img = frontmatter.image;
+
+const postImageGlob = import.meta.glob<{ default: ImageMetadata }>(
+	'/src/pages/posts/**/*.{jpeg,jpg,png,gif}'
+);
+const postImage = postImageGlob[img.src];
+if (!postImage)
+	throw new Error(`"${img.src}" does not exist in glob: "src/pages/posts/**/*.{jpeg,jpg,png,gif}"`);
+
+const postImageUrl = new URL((await postImage()).default.src, import.meta.url).href;
 
 const rawPosts = import.meta.glob<MarkdownInstance<PostFrontmatter>>(
 	'/src/pages/posts/**/*.{md,mdx}',
@@ -40,7 +51,8 @@ const relatedPosts = (frontmatter.relatedPosts ?? [])
 <Base
 	head={{
 		title: `${frontmatter.title} | ${AppConfig.title}`,
-		description: frontmatter.description
+		description: frontmatter.description,
+		image: postImageUrl
 	}}
 >
 	<div class="mx-auto w-full max-w-screen-sm">

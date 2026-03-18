@@ -11,11 +11,12 @@ type Props = {
 	head: {
 		title: string;
 		description: string;
+		image?: string;
 	};
 };
 
 const {
-	head: { title, description }
+	head: { title, description, image }
 } = Astro.props as Props;
 ---
 
@@ -26,6 +27,20 @@ const {
 		<title>{title}</title>
 		<meta name="description" content={description} />
 		<meta name="author" content={AppConfig.author} />
+
+		<!-- Open Graph -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url.href} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:site_name" content={AppConfig.site_name} />
+		<meta property="og:locale" content={AppConfig.locale_region} />
+		{image && <meta property="og:image" content={image} />}
+		<!-- Twitter -->
+		<meta name="twitter:card" content={image ? 'summary_large_image' : 'summary'} />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		{image && <meta name="twitter:image" content={image} />}
 
 		<link rel="sitemap" href="/sitemap-index.xml" />
 		<link rel="alternate" type="application/rss+xml" href="/rss.xml" />
