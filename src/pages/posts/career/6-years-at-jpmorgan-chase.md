@@ -4,16 +4,16 @@ title: '6 Years at JPMorgan Chase: The Things That Last'
 pubDate: 2026-03-30
 description: 'After six years in one place, I reflect on what truly remains once projects change, code evolves, and teams move on.'
 isPinned: false
-excerpt: "Code gets rewritten, projects get replaced, and systems evolve. What tends to last much longer are the lessons learned, the people we meet, and the engineering cultures we help shape."
+excerpt: 'Code gets rewritten, projects get replaced, and systems evolve. What tends to last much longer are the lessons learned, the people we meet, and the engineering cultures we help shape.'
 image:
   src: /src/pages/posts/career/_6-years-at-jpmorgan-chase.jpg
-  alt: 'A long road disappearing into the horizon during sunset'
+  alt: 'A high building with a blue sky in the background'
 tags: ['career', 'principles', 'engineering', 'mindset']
 relatedPosts:
   - /posts/career/managing-time-as-senior-engineer
   - /posts/career/interviews-as-win-win-or-no-deal
   - /posts/career/a-mentoring-win-that-made-me-proud
-accreditation:      
+accreditation:
   handle: https://unsplash.com/@markh6004
   photographer: Mark Higham
   photo: https://unsplash.com/photos/low-angle-photography-of-high-rise-buildings-under-blue-sky-during-daytime-hEFlK-ZoE-E
@@ -69,6 +69,7 @@ At the end, these are the things that actually last.
 I am excited to share that I will be joining [ATG Entertainment](https://www.atgentertainment.com/) as a Senior Frontend Engineer. I look forward to learning from new colleagues, contributing to impactful products, and continuing to grow as an engineer in a new environment.
 
 ## Recap
+
 - Build connections with colleagues and strive to learn from them.
 - Focus on positive engineering culture and the impact you can have on it.
 - Don't get attached to code or projects, they will change and evolve, focus on the lessons and people instead.
