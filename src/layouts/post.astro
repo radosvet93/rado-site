@@ -26,7 +26,7 @@ const postImage = postImageGlob[img.src];
 if (!postImage)
 	throw new Error(`"${img.src}" does not exist in glob: "src/pages/posts/**/*.{jpeg,jpg,png,gif}"`);
 
-const postImageUrl = new URL((await postImage()).default.src, import.meta.url).href;
+const postImageUrl = new URL((await postImage()).default.src, Astro.site).href;
 
 const rawPosts = import.meta.glob<MarkdownInstance<PostFrontmatter>>(
 	'/src/pages/posts/**/*.{md,mdx}',
