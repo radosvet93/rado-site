@@ -6,7 +6,7 @@ import a11yAssistantImage from '../a11y-assistant.png';
 
 export const projects = [
 	{
-		url: 'https://www.mellsnap.co.uk',
+		url: 'https://mellsnap.co.uk',
 		title: 'MellSnap Marketing Site',
 		description:
 			'Developed and manage the full online presence for a family photography business, covering website, marketing, content, and sales',
@@ -14,11 +14,11 @@ export const projects = [
 			src: mellsnapMarketing,
 			alt: 'MellSnap marketing website'
 		},
-		tech: 'Wordpress',
+		tech: 'AstroJS',
 		industry: 'Photography'
 	},
 	{
-		url: 'https://www.mellsnap.com',
+		url: 'https://mellsnap.com',
 		title: 'MellSnap Galleries',
 		description:
 			'Built a Next.js and AWS-powered gallery platform with an admin backend for photographers to upload, manage, and deliver client galleries',
@@ -51,7 +51,7 @@ export const projects = [
 			src: casaMartinaImage,
 			alt: 'Casa martina tuscany marketing site'
 		},
-		tech: 'Astro',
+		tech: 'AstroJS',
 		industry: 'Tourism'
 	},
 	{
