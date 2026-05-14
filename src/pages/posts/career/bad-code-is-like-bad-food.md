@@ -76,6 +76,7 @@ You don't stop drinking alcohol for two weeks and suddenly feel ten years younge
 The benefits compound slowly.
 
 But one day you wake up and realise:
+
 - You feel better
 - You sleep better
 - You have more energy
@@ -86,6 +87,7 @@ But one day you wake up and realise:
 Good engineering practices work exactly the same way.
 
 You invest in:
+
 - Clear architecture
 - Proper testing
 - Accessibility
@@ -143,6 +145,7 @@ Cooking healthy meals consistently requires discipline because unhealthy food is
 The same is now true for engineering.
 
 Good engineers will learn how to incorporate AI into disciplined workflows:
+
 - Using it to accelerate thinking, not replace thinking
 - Verifying outputs critically
 - Maintaining engineering standards
@@ -170,6 +173,7 @@ But generally the signals are visible.
 The same thing happens with codebases.
 
 You can often feel engineering culture within minutes:
+
 - Naming consistency
 - Folder structure
 - Test quality
@@ -196,11 +200,11 @@ I start asking myself this question more and more often:
 
 Lately I've started asking the same thing while coding.
 
-Should I let AI think and generate this entire thing? 
+Should I let AI think and generate this entire thing?
 
 If the improvement is genuinely valuable, then do it. AI is a powerful tool that can enhance our work when used thoughtfully.
 
-But if uncertainty exists, it's usually worth slowing down and exploring alternatives first. Ask more questions, think critically, and consider the long-term implications of your choices. 
+But if uncertainty exists, it's usually worth slowing down and exploring alternatives first. Ask more questions, think critically, and consider the long-term implications of your choices.
 
 Because just like food, engineering decisions compound quietly.
 
