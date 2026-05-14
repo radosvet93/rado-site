@@ -19,6 +19,7 @@ export const allowedTags = [
 	'teamwork',
 	'mindset',
 	'engineering',
+	'architecture',
 	'time-management',
 	'interviews',
 	'open-source',

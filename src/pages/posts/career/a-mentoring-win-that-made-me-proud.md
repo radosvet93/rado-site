@@ -3,7 +3,7 @@ layout: ../../../layouts/post.astro
 title: 'A Mentoring Win That Made Me Proud'
 pubDate: 2026-02-10
 description: 'A reflection on mentoring an engineer through interview preparation, focusing on positioning, structured communication, and building confidence so they could perform calmly when it mattered most.'
-isPinned: true
+isPinned: false
 excerpt: "One of my mentees recently landed a role they had been aiming for, and I'm so happy for them. What made the difference wasn't grinding algorithms - it was positioning their experience correctly, understanding how to structure interviews, and building the confidence to stay calm under pressure."
 image:
   src: /src/pages/posts/career/_a-mentoring-win-that-made-me-proud.jpg
