@@ -67,15 +67,19 @@ const {
 			type="font/woff2"
 			crossorigin
 		/>
-		<script>
-			document
-				.querySelector('html')
-				?.classList.toggle(
+		<script is:inline>
+			(() => {
+				const stored = localStorage.getItem('theme');
+				const mode = stored === 'light' || stored === 'dark' ? stored : 'system';
+				const root = document.documentElement;
+
+				root.dataset.themeMode = mode;
+				root.classList.toggle(
 					'dark',
-					localStorage.theme === 'dark' ||
-						(!('theme' in localStorage) &&
-							window.matchMedia('(prefers-color-scheme: dark)').matches)
+					mode === 'dark' ||
+						(mode === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)
 				);
+			})();
 		</script>
 	</head>
 
