@@ -34,8 +34,6 @@ Be data-driven, prevention-focused, future-minded, and evidence-based. That's ho
 
 > You can't manage what you can't measure.
 
-– Capers Jones
-
 Frontend teams often celebrate shipping speed but rarely quantify it.
 
 Jones' decades of research proved that the best-performing teams track predictive metrics - not vanity numbers like commit count or story points, but ones that reveal delivery health and system quality.
