@@ -65,7 +65,7 @@ The uncomfortable part is what happens to that output afterwards.
 
 **The other side of this:**
 
-I have to be fair. DORA's conclusion is not "AI is bad". It is that AI is an amplifier. Teams with strong automated tests, fast feedback, and mature version control get the throughput without the instability. Teams without those controls get the instability at scale. The tool is exposing what was already true about the team. 
+I have to be fair. DORA's conclusion is not "AI is bad". It is that AI is an amplifier. Teams with strong automated tests, fast feedback, and mature version control get the throughput without the instability. Teams without those controls get the instability at scale. The tool is exposing what was already true about the team.
 
 I'm learning to play a guitar and I have two at the moment, one is acoustic and the other is electric with 50W amplifier, guess which one tells me when I'm wrong, that's right, the electric with the amplifier, I can hear loudly my mistakes.
 

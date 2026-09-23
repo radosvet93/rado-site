@@ -25,7 +25,7 @@ export const allowedTags = [
 	'open-source',
 	'community',
 	'ai',
-	'llm',
+	'llm'
 ] as const;
 
 const postSchema = z.object({
