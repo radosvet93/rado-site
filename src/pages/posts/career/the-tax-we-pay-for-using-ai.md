@@ -193,14 +193,6 @@ So I try to force generation back into the loop:
 
 None of this scales to everything. That is the honest limit. I pick the parts of the system I will still be responsible for in a year, and I pay the cost there.
 
-## Recap
-
-- The tax is real, and it is paid in ownership, attention, understanding and the feeling of having built something.
-- The tool is not the problem, the dose is. Eating has brakes, AI does not, so you have to supply them.
-- You are now a supervisor of work you did not do. Supervising well requires practice you no longer get for free.
-- Measure your speed with something other than your feelings. That is the one finding that has held up across two rounds of the research.
-- If you take one thing from this post, take "give me two sentences", and use it on things you can check.
-
 ## Final thoughts
 
 I am not going back. The tools are too useful and I would be worse at my job without them.
