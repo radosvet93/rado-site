@@ -197,9 +197,13 @@ None of this scales to everything. That is the honest limit. I pick the parts of
 
 I am not going back. The tools are too useful and I would be worse at my job without them.
 
-But I have stopped treating output as the score. The question I ask at the end of a day is no longer "how much did I ship", it is "how much of what I shipped could I defend, from memory, in a room with no laptop".
+I do measure my speed with something other than my feelings now. That is the one finding that has held up across two rounds of the research.
+
+And I have stopped treating output as the score. The question I ask at the end of a day is no longer "how much did I ship", it is "how much of what I shipped could I defend, from memory, in a room with no laptop".
 
 Some days the answer is embarrassing. That is the invoice arriving.
+
+If you take one thing from this post, take "give me two sentences", and use it on things you can check.
 
 <details>
 <summary><strong>📚 Further Reading</strong></summary>
