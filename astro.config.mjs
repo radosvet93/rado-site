@@ -5,6 +5,14 @@ import vercelStatic from '@astrojs/vercel';
 import tailwindcss from '@tailwindcss/vite';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
+import sentry from '@sentry/astro';
+
+try {
+	process.loadEnvFile();
+} catch {
+	// no .env (Vercel, CI): vars come from the environment
+}
+
 const options = {
 	// Specify the theme to use or a custom theme json, in our case
 	// it will be a moonlight-II theme from
@@ -39,7 +47,19 @@ export default defineConfig({
 		remarkPlugins: [remarkReadingTime]
 	},
 
-	integrations: [react(), sitemap()],
+	integrations: [
+		react(),
+		sitemap(),
+		sentry({
+			project: 'rado-website',
+			org: 'radosvet',
+			authToken: process.env.SENTRY_AUTH_TOKEN,
+			// defaults assume an SSR dist/{client,server} layout, which a static build has not
+			sourcemaps: {
+				filesToDeleteAfterUpload: ['./dist/**/*.map', './.vercel/output/**/*.map']
+			}
+		})
+	],
 	output: 'static',
 
 	adapter: vercelStatic({
